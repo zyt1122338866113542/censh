@@ -9,14 +9,13 @@ CREATE TABLE censh_user(
     uname VARCHAR(32) default NULL,
     upwd VARCHAR(32) default NULL,
     email VARCHAR(64) default NULL,
-    phone VARCHAR(16) default NULL,
     avatar VARCHAR(128) default NULL,
     user_name VARCHAR(32) default NULL,
     gender INT(11) default NULL,
     PRIMARY KEY (uid)
 );
 
-INSERT INTO censh_user VALUES(1,'duoduo','123','1234567890@qq.com','18812345678',default,'多多',1);
+INSERT INTO censh_user VALUES(1,'188123456789','123','1234567890@qq.com',default,'多多',1);
 
 /******轮播图模块******/
 #首页轮播广告表

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function reg(){
+            //使用dom获取数据
+            var $uname=uname.value;
+            
+
+            //使用ajax
+            var xhr=new XMLHttpRequest();
+            xhr.onreadystatechange=function(){
+                if(xhr.readyState==4 && xhr.status==200){
+                    var result=xhr.responseText;
+                    alert("成功");
+                }
+            };
+            xhr.open("post","/user/v1/reg",true);
+            var formdata=`uname=${$uname}`;
+			xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+            xhr.send(formdata);
+
+        }
+    </script>
+</head>
+<body>
+    <div class="login-content-inputBox username">
+        <input type="text" name="uname" value="" placeholder="请输入手机号" maxlength="11" id="uname">
+         <input type="button" value="获取验证码" id="getSMS">
+        <div class="login-content-inputBox-msg"></div>
+    </div>
+    <div class="login-content-inputBox SMSCode">
+         <input type="text" name="ucode" value="" placeholder="请输入短信验证码" maxlength="6" id="ucode">
+         <div class="login-content-inputBox-msg"></div>
+    </div>
+   <button onclick="reg()" >注册&登录</button>	
+    <div class="login-content-agreement">
+        <input type="checkbox" checked="checked" id="uagree"/>
+        <label for="uagree">继续操作则默认视为您已同意<a href="/info/register_terms">《盛时网用户注册协议》</a>
+        </label>
+     </div>
+
+</body>
+</html>
