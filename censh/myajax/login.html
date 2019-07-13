@@ -3,6 +3,189 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<style>                
+		*{margin:0;padding:0}
+		.full{
+			width:1500px;
+			height:780px;
+			background:#fff;
+		}
+		.header{
+			width:100%;
+			height:120px;		
+		}
+		.header .logo{
+			width:200px;
+			height:50px;
+			padding-top:40px;
+			padding-left:50px;
+		}
+		.header .download{
+			text-decoration:none;
+			font-size:15px;
+			color:red;
+			text-align:buttom;
+			float:right;
+			
+		}
+		.container{
+			width:100%;
+			height:588px;
+			padding-bottom:62px;
+			background:#e9f2fb;
+		}
+		.container .img{
+			padding-left:150px;
+			float:left;
+		}
+		.content .loginMain{
+			width:600px;
+			height:550px;		
+			float:left;
+		}
+		.container .login-content{
+			width:340px;
+			height:450px;
+			margin:50px 30px;
+			padding:40px 30px;
+			border-right:1px solid #e5e5e5;
+			background-color:#fff;
+			float:left;
+		}
+		.container .login-content-btns{
+			height:20px;
+			padding-bottom:30px;
+			margin-bottom:34px;
+			box-sizing:border-box;
+			border-bottom:1px solid #e5e5e5;
+			color:#666;
+			font-style:bold ;
+			font-size:20px;
+		}
+		.container .login-content-btns>#newLogin:hover{
+			color:red;
+		}
+		.container .login-content-btns>#oldLogin:hover{
+			color:red;
+		}
+		.container .login-content-btns>#newLogin{
+			width:100px;
+			height:20px;
+			padding-right:40px;
+			padding-bottom:20px;
+			margin-left:25px;
+			margin-right:15px;
+			text-align:center;
+			float:left;
+		}
+		.container .login-content-btns .spit{
+			color: #e5e5e5;
+			float:left;
+		}
+		.container .login-content-btns>#oldLogin{
+			width:150px;
+			height:50px;			
+			text-align:center;
+			float:left;
+		}
+
+		.login-content-view{
+			padding-bottom:50px;
+			padding-left:34px;
+			margin-bottom:34px;
+			box-sizing:border-box;
+			color:#666;
+			font-style:bold 黑体;
+			font-size:20px;
+			float:left;
+		}
+		.container .login-content-view .item{
+			width:100%;
+			height:50px;			
+			margin-top:1px;
+			margin-left:-10px;
+			text-align:center;
+			float:left;
+		}
+		input{
+			margin:0;
+			outline:0;
+			width:285px;
+			height:40px;
+			padding-left:15px;
+			border:1px
+			box-sizing:border-box;
+		}
+		#upwd{
+			margin-top:20px;
+		}
+		.btn{
+			width:305px;
+			height:40px;
+			margin-top:20px;
+			background:red;
+			color:#fff;
+			line-height:40px;
+			border-radius:1px;
+			border:none;
+		}
+		.forget a{
+			padding-top:20px;
+			text-decoration:none;
+			float:right;
+			color:#000;
+			font-size:14px;
+		}
+		.login-other{
+			width:340px;
+			height:160px;
+			box-sizing:border-box;
+			margin:50px 30px;
+			padding:40px 30px;
+			background-color:#fff;
+			float:left;
+		}
+		.login-other .headline p{
+			width:140px;
+			height:25px;
+			margin:20px;
+			padding-left:23px;
+			line-height:25px;
+			font-size:13px ;
+			color:#666;
+		}
+		ul{
+			list-style:none;
+			font-size:5px;
+			color:#666;
+			float:left;
+		}
+		.three{
+			width:200px;
+			height:30px;
+      margin:20px;
+			padding-left:23px;
+			line-height:30px;
+			font-size:13px ;
+			color:#666;
+			float:left;
+		}
+		li{
+			float:left;
+		}
+		.wechat{
+			width:80px;
+			margin-left:-30px;
+		}
+		.weibo{
+			width:80px;
+		}
+		.qq{
+			width:50px;
+		}
+	</style>
+
+
 	<script>
 		function login(){
 			var $uname=uname.value;
@@ -27,63 +210,45 @@
 	</script> 
 </head>
 <body>
-	<div class="main customer-accuount-forgotpassword censh-login censh-forgit">
-		<div class="col-main">
-			<div class="login_header">
-				<a class="logo left" href="https://www.censh.com">
-					<img src="logo.png" alt="盛世网" class="large">
-				</a>
-				 <a href="https://www.censh.com/index/appdown" class="APP right"><span class="icon"><i></i>下载盛时APP</span><span class="erweima"></span></a>
+	<div class="full">
+		<div class="header">
+			<div class="img">
+				<img src="./image/logo.png" alt="" class="logo">
+				<h3><a href="#" class="download">下载盛世APP</a></h3>
 			</div>
-
-
-<!--头部-->
-<style>
-	.login_header {
-		overflow:visible;
-	}
-</style>
-<div class="login-wrapper">
-	<div class="login-ad">
-		<img src="login_bg.jpg" alt="盛时网登录网">
-	</div>
-	<div class="login-content">
-		<div class="login-content-btns">
-			<div class="item on" id="newLogin">手机号登录</div>
-			<div class="item" id="oldLogin">账号登录</div>
+		</div>
+		<div class="container">
+			<div class="img">
+				<img src="./image/login_bg.jpg" alt="" class="login_bg">
+			</div>
+			<div class="login-content">
+				<div class="login-content-btns">
+					<div class="item on" id="newLogin">手机号登录</div>
+					<div class="spit">|</div>
+					<div class="item" id="oldLogin">账号登录</div>
+				</div>
+				<div class="login-content-view">
+					<div class="item">
+						<div class="login-content-inputBox_other">
+							<div><input type="text" name="old_name" placeholder="请输入手机号"  id="uname"> </div>
+   						<div> <input type="password" name="upwd" placeholder="请输入密码" id="upwd"></div>
+  						<button onclick="login()" class="btn">登录</button>	
+   						<div class="forget"><a href="/forgetpassword">忘记密码？</a> </div>
+						</div>
+  	 			</div>
+  			</div>
+   			<div class="login-other">
+					<div class="headline"><p>使用第三方登录</p></div>
+						<div class="three">
+							<ul>
+								<li class="wechat">微信	</li>
+								<li class="weibo">微博</li>
+							  <li class="qq">QQ</li>
+						  </ul>
+						</div>						
+					</div>
+				</div> 						
 		</div>
 	</div>
-
-	<div class="login-content-view">
-		<div class="login-content-mode">
-			<div class="item">
-				<div class="login-content-inputBox other">
-					<div><input type="text" name="old_name" placeholder="请输入手机号"  id="uname"> </div>
-   					<div> <input type="password" name="upwd" placeholder="请输入密码" id="upwd"></div>
-  					 <button onclick="login()" >登录</button>	
-   					<div><a href="/forgetpassword">忘记密码？</a> </div>
-				</div>
-  	 		</div>
-  		</div>
-    </div>
-
-	<div class="login-other">
-		<div class="headline"><p>使用第三方登录</p></div>
-		<ul>
-			<li class="wechat">
-				<span id="wxLonginBtn"></span>
-				<p>微信</p>
-			</li>
-			<li class="weibo">
-				<span id="wbLonginBtn"></span>
-				<p>微博</p>
-			</li>
-			<li class="qq">
-				<span id="qqLonginBtn"></span>
-				<p>QQ</p>
-			</li>
-		</ul>
-	</div>
-</div> 	
 </body>
 </html>
