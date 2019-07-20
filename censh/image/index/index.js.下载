@@ -1,0 +1,86 @@
+$(function () {
+    $('head').append('<base target="_blank">');//首页用新标签开打链接
+    /*var indexBanner = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        slidesPerView: 'auto',
+        autoplay: 3000,
+        loop: true,
+        autoplayDisableOnInteraction: false,
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        onSlideChangeStart: function (i) {
+            $('.swiper-slide').eq(i.activeIndex).find('img').css('transform', 'scale(1.1)')
+        },
+        onSlideChangeEnd: function (i) {
+            $('.swiper-slide').eq(i.activeIndex).find('img').css('transform', 'scale(1)')
+        }
+    });*/
+    //热销表款
+    $('.hot .content ol li').on('mouseenter', function () {
+        var index = $(this).index();
+        var hot = $(this).parents('section.hot');
+        $(this).addClass('active').siblings().removeClass('active');
+        hot.find('.big-pic img').removeClass('active').eq(index).addClass('active');
+        hot.find('.content ul').removeClass('active').eq(index).addClass('active');
+    });
+
+    //门店tab
+    function storeTab(a, b, c, d) {
+        $(a).on('mouseenter', function () {
+            $(this).addClass('active');
+            $(b).removeClass('active');
+            $(c).show();
+            $(d).hide();
+        })
+    }
+
+    storeTab('.sale-store', '.repair-store', '.sale-ul', '.repair-ul');
+    storeTab('.repair-store', '.sale-store', '.repair-ul', '.sale-ul');
+    //排行榜tab
+    $('.rank .content .tab > span').on('mouseenter', function () {
+        var index = $(this).index();
+        $(this).addClass('active').siblings().removeClass('active');
+        $(this).parents('.content').find('.list>ul').eq(index).show().siblings().hide();
+    });
+    //表友晒单
+    $('section.share ul li img')[4].onload = function () {
+        setTimeout(function () {
+            $('section.share ul li').each(function () {
+                var thisDiv = $(this).find('div'),
+                    thisPic = $(this).find('img');
+                if (thisPic.height() < 152) {
+                    thisPic.css({
+                        'width': 'auto',
+                        'height': '152px'
+                    });
+                    thisPic.css({
+                        'margin-left': -(thisPic.width() - thisDiv.width()) / 2 + 'px'
+                    })
+                } else if (thisPic.height() > 152) {
+                    thisPic.css({
+                        'margin-top': -(thisPic.height() - thisDiv.height()) / 2 + 'px'
+                    })
+                }
+            })
+        }, 500);
+    }
+});
+
+window.onload = function(){
+    var indexTopSwiper = new Swiper('.indexTopSwiper', {
+        speed: 500,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false
+        },
+        loop: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+        },
+        pagination: {
+            el: '.swiper-pagination'
+        }
+    });
+};

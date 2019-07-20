@@ -1,0 +1,137 @@
+$(function () {
+    /*商品比较相关js*/
+    $.initCompare = function () {
+        var m = this;
+        var compare_list = [];
+        if ($.cookie('compare_list')) {
+            compare_list = $.cookie('compare_list').split('-');
+        }
+        m.compare_list = compare_list;
+        var max_compare_limit = 3;
+        m.max_compare_limit = max_compare_limit;
+
+        $('.product-compare').on('change', function () {
+            var pkid = $(this).val();
+            var pkidStr = "'" + pkid + "'";
+            if ($(this).is(':checked')) {
+                if (m.compare_list.length < max_compare_limit) {
+                    var index = m.compare_list.length;
+                    m.compare_list.push(pkid);
+                    var img_src = $(this).parents('li').find('img').attr('src');
+                    var li_html = '<a href=""><img src="' + img_src + '" width="80" height="80" alt="" /></a>' +
+                        '<a class="close" href="javascript:;" onclick="window.Compare.removeCompare(' + pkidStr + ')"></a>';
+                    $('.watch-compare .compare-box li:eq(' + index + ')').html(li_html);
+                } else {
+                    alert('最多只能比较' + max_compare_limit + '个商品');
+                    $(this).attr("checked", false);
+                }
+                $.cookie('compare_list', m.compare_list.join('-'), {
+                    expires: 7,
+                    path: '/'
+                });
+            } else {
+                m.removeCompare(pkid);
+            }
+
+            if (m.compare_list.length > 0) {
+                $('.watch-compare').parent().parent().addClass('hover');
+            } else {
+                $('.watch-compare').parent().parent().removeClass('hover');
+            }
+        });
+
+        //右侧浮动层赋初始值，含图片
+        m.initRightFloatingCompareHtml = function () {
+            if ($('.watch-compare .compare-box').length > 0) {
+                $.ajax({
+                    type: 'GET',
+                    url: '/product/getCurrentCompareList',
+                    success: function (response) {
+                        var dataObj = eval("(" + response + ")");
+                        $('.watch-compare .compare-box li').each(function () {
+                            $(this).html('<a href="/watch/"><i></i><p>添加</p></a>');
+                        });
+                        if (dataObj.length > 0) {
+                            $('.watch-compare').parent().parent().addClass('hover');
+                            $.each(dataObj, function (i, n) {
+                                var pkidStr = "'" + n.pkid + "'";
+                                var li_html = '<a href="javascript:;"><img src="' + n.image_url + '" width="80" height="80" alt=""  onerror="imgError(this);"/></a>' +
+                                    '<a class="close" href="javascript:;" onclick="window.Compare.removeCompare(' + pkidStr + ')"></a>';
+                                $('.watch-compare .compare-box li:eq(' + i + ')').html(li_html);
+                            });
+                        } else {
+                            $('.watch-compare').parent().parent().removeClass('hover');
+                        }
+                    },
+                    error: function (response) {
+
+                    }
+                });
+            }
+        };
+
+        //商品列表的checkbox赋初始选中值
+        m.initProductListCompareChecked = function () {
+            if (m.compare_list && $('.product-compare').length > 0) {
+                $('.product-compare').each(function () {
+                    var _index = $.inArray($(this).val(), m.compare_list);
+                    if (_index >= 0) {
+                        $(this).attr("checked", true);
+                    }
+                })
+            }
+        };
+
+        m.removeCompare = function (pkid) {
+            var index = $.inArray(pkid, m.compare_list);
+            m.compare_list.splice(index, 1);
+            $.cookie('compare_list', m.compare_list.join('-'), {
+                expires: 7,
+                path: '/'
+            });
+            m.initRightFloatingCompareHtml();
+            if ($('.product-compare').length > 0) {
+                $('.product-compare').each(function () {
+                    if ($(this).val() == pkid) {
+                        $(this).attr("checked", false);
+                    }
+                })
+            }
+            if ($('.detail-button .is-compare').length > 0 && $('.detail-button .is-compare').data('pkid') == pkid) {
+                $('.detail-button .is-compare').removeClass('is-compare');
+            }
+        };
+    };
+
+    $(document).ready(function () {
+        window.Compare = new $.initCompare();
+        window.Compare.initRightFloatingCompareHtml();
+        window.Compare.initProductListCompareChecked();
+    });
+});
+
+function imgError(image, type) {
+    if (!type) {
+        type = 'product';
+    }
+    $(image).attr('src', '/media/default-' + type + '.png');
+}
+
+function getQueryString(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return decodeURIComponent(r[2]);
+    return null;
+}
+
+function formatMoney(number, places, symbol, thousand, decimal) {
+    number = number || 0;
+    places = !isNaN(places = Math.abs(places)) ? places : 2;
+    symbol = symbol !== undefined ? symbol : "$";
+    thousand = thousand || ",";
+    decimal = decimal || ".";
+    var negative = number < 0 ? "-" : "",
+        i = parseInt(number = Math.abs(+number || 0).toFixed(places), 10) + "",
+        j = (j = i.length) > 3 ? j % 3 : 0;
+    return symbol + negative + (j ? i.substr(0, j) + thousand : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thousand) + (places ? decimal + Math.abs(number - i).toFixed(places).slice(2) : "");
+}
