@@ -1,5 +1,5 @@
-
-header{
+/* 头部 */
+header,footer{
     margin: 0 auto;
 	width:100%;
     height:168px;
@@ -175,4 +175,70 @@ header .menu .wrap{
     font-size:15px;
     color:#fff;
     cursor:pointer;	
+}
+
+/* 尾部 */
+footer{
+    margin-top: 50px;
+}
+footer .footer-icon{
+    width: 100%;
+    height: 43px;
+    padding: 11px 0;
+    background-color: #3f3b3a;
+    color: #fff;
+}
+footer .core{
+    width: 1200px;
+    margin: 0 auto;
+}
+footer .core ul li{
+    float: left;
+    width: 20%;
+    padding-left: 5%;
+}
+footer .core ul li i{
+    float: left;
+    width: 45px;
+    height: 45px;
+    background: url(../image/images/footer_sprites.png) 0 0/101px 101px no-repeat;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+footer .core ul li i.icon2{
+    background: url(../image/images/footer_sprites.png) 0 0/101px 101px no-repeat;
+    background-position: 0px -57px;
+}
+footer .core ul li i.icon3{
+    background: url(../image/images/footer_sprites.png) 0 0/101px 101px no-repeat;
+    background-position: -58px -57px;
+}
+footer .core ul li i.icon4{
+    background: url(../image/images/footer_sprites.png) 0 0/101px 101px no-repeat;
+    background-position: -58px 2px;
+}
+footer .core ul li strong{
+    display: block;
+    height: 20px;
+    font-size: 16px;
+    font-weight: 900;
+    margin-top: 2px;
+}
+footer .footer-message{
+    margin-top: 5px;
+    border-top: 2px solid #000;
+    background-color: #f6f7f7;
+}
+footer .footer-message .about-us{
+    padding: 15px 0 30px;
+} 
+footer .footer-message .about-us .about-us-left{
+    width: 15%;
+    margin: 30px 5% 0;
+    text-align: center;
+}
+footer .footer-message .about-us .about-us-left .tel{
+    font-size: 20px;
+    font-weight: 900;
+    color: #231815;
 }
