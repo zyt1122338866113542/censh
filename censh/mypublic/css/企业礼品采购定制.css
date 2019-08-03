@@ -1,0 +1,11 @@
+.layoutcontainter{
+    width:1200px;
+    margin: 0 auto;
+    box-sizing:border-box;	
+}
+.layoutcontainter .double .self-center{
+    text-align: center;
+}
+footer .footer-icon .core ul{
+    margin: 0;
+}

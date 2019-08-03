@@ -1,0 +1,71 @@
+.col-main{
+    width:1200px;
+    margin:0 auto;
+    box-sizing:border-box;	
+    margin-top: 20px;
+}
+main section.breadcrumbs{
+    padding: 20px 0;
+}
+main section.breadcrumbs ul,main section.filter ul{
+    padding: 0;
+}
+main section.breadcrumbs ul li {
+    float: left;
+    color: #9d9e9f;
+}
+main section.breadcrumbs ul li a{
+    color: #9d9e9f;
+}
+main section.filter{
+    border-top: 1px solid #eee;
+}
+main section.filter .filter-option{
+    padding: 15px 0;
+    border: 1px solid #eee;
+    border-top: none;
+    position: relative;
+}
+main section.filter .filter-option .filter-option-title{
+    width: 108px;
+    line-height: 25px;
+    font-size: 14px;
+    font-weight: 700;
+    padding-left: 20px;
+}
+main section.filter .filter-option .filter-option-list{
+    margin: 0 80px 0 138px;
+}
+main section.filter .filter-option .filter-option-title ul li{
+    display: inline-block;
+    line-height: 25px;
+    padding: 0 20px 0 8px;
+    border: 1px solid #e51f1d;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #8c8c8c;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+main section.filter .filter-option .filter-option-title ul li i{
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: url(../../image/images/close.png) center/100% no-repeat;
+}
+main section.filter .filter-option .filter-option-reset{
+    width: 45px;
+    line-height: 18px;
+    text-align: center;
+    color: #676767;
+    font-size: 12px;
+    border: 1px solid #676767;
+    box-sizing: border-box;
+    background-color:#fff;
+    outline: 0;
+    position: absolute;
+    top:20px;
+    right: 15px;
+    cursor: pointer; 
+}

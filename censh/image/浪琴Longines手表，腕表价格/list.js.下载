@@ -1,0 +1,309 @@
+$(function () {
+    function changeURLArg(url, arg, arg_val, type) {
+        if (type == 'normal') {
+            var pattern = arg + '=([^&]*)';
+            var replaceText = arg + '=' + arg_val;
+            if (url.match(pattern)) {
+                var tmp = '/(' + arg + '=)([^&]*)/gi';
+                tmp = url.replace(eval(tmp), replaceText);
+                return tmp;
+            } else {
+                if (url.match('[\?]')) {
+                    return url + '&' + replaceText;
+                } else {
+                    return url + '?' + replaceText;
+                }
+            }
+        } else {
+            var pattern = arg + '([0-9][^-]*)';
+            var replaceText = arg + arg_val;
+            if (url.match(pattern)) {
+                var tmp = '/(' + arg + ')([0-9][^-]*)/gi';
+                tmp = url.replace(eval(tmp), replaceText);
+                return tmp;
+            } else {
+                if (url.match('\/[A-Za-z]{2}[0-9]+')) {
+                    arg = '-' + arg;
+                }
+                if (url.match('[\?]')) {
+                    var urlParams = url.split('?');
+                    var dynamicParams = urlParams[1].split('&');
+                    var newDynamicParams = new Array();
+                    $.each(dynamicParams, function (i, n) {
+                        if (!n.match('page=')) {
+                            newDynamicParams.push(n);
+                        }
+                    });
+                    var newDynamicParamString = newDynamicParams.join('&');
+                    if (newDynamicParamString) {
+                        return urlParams[0] + arg + arg_val + '?' + newDynamicParamString;
+                    } else {
+                        return urlParams[0] + arg + arg_val;
+                    }
+                } else {
+                    return url + arg + arg_val;
+                }
+            }
+        }
+        //return url + '\n' + arg + '\n' + arg_val;
+    }
+    /*筛选*/
+    //more
+    function filerMore() {
+        var ulHeight,
+            list = $(".normal-row > .filter-list"),
+            ulList = list.find('>ul');
+        for (var i = 0; i < ulList.length + 1; i++) {
+            //价格一列不收缩
+            if (ulList.eq(i).find('li.price').length) {
+                continue;
+            }
+            ulHeight = ulList.eq(i).height();
+            if (ulHeight > 26) {
+                seriesSpread(i);
+                ulList.eq(i).find('>li').css({
+                    'margin-bottom': '7px'
+                });//拉开第2行的距离防止hover
+                (function (i) {
+                    list.eq(i).find('.button-more').on("click", function () {
+                        //console.log(i)
+                        $(this).hide();
+                        $(this).parents('.filter-list').find('>ul>li').css({
+                            'margin-bottom': 0
+                        });//展开-取消margin
+                        ulList.eq(i).attr("style", "");//展开
+                        list.eq(i).find('.button-close').show().on("click", function () {
+                            $(this).hide();
+                            $(this).parents('.filter-list').find('>ul>li').css({
+                                'margin-bottom': '7px'
+                            });
+                            seriesSpread(i);
+                        });
+                    })
+                })(i)
+            }
+        }
+
+        function seriesSpread(i) {
+            console.log(i)
+            ulList.eq(i).css({
+                "overflow": "hidden",
+                "height": "26px"
+            });
+            list.eq(i).find('.button-more').show();
+        }
+    }
+    //品牌
+    function filerBrand() {
+        brandClose();
+        buttonClick("close", "more", 1);
+        buttonClick("more", "close", 0);
+        $(".button-check").on("click", function () {
+            brandOpen();
+            $(".brand-list").hide();
+            $(".check-list").show();
+            $(".filter-brand > .filter-button > .button-check").hide();
+            $(".filter-brand > .filter-button > .button-more").hide();
+            $(".filter-brand > .filter-button > .button-close").hide();
+            $(".confirm").show();
+            $(".filter-button .cancel").show();
+        });
+        $(".filter-button .cancel").on("click", function () {
+            $(".brand-list").show();
+            $(".check-list").hide();
+            $(".filter-brand > .filter-button > .button-check").show();
+            $(".filter-brand > .filter-button > .button-close").show();
+            $(".confirm").hide();
+            $(".filter-button .cancel").hide();
+        });
+        $(".filter-brand .confirm").on("click", function () {
+            var selected = '';
+            $('.filter-brand input:checked').each(function () {
+                if (selected) {
+                    selected += '_' + $(this).val();
+                } else {
+                    selected = $(this).val();
+                }
+            });
+            if (selected) {
+                var url = window.location.href;
+                var brand_key;
+                if($('main').attr('data-typecode') == 'wa') {
+                    brand_key = 'br';
+                    url = changeURLArg(url, brand_key, selected, 'seo');
+                }else{
+                    brand_key = 'brand';
+                    url = changeURLArg(url, brand_key, selected, 'normal');
+                }
+                location.href = url;
+            }
+        });
+
+        function buttonClick(dom1, dom2, bool) {
+            $(".filter-brand > .filter-button > .button-" + dom1).on("click", function () {
+                bool ? brandClose() : brandOpen();
+                $(this).hide();
+                console.log(1111)
+                $(this).siblings(".button-" + dom2).show();
+            })
+        }
+
+        function brandClose() {
+            $(".filter-brand > ul > li > ul").css({
+                "overflow": "hidden",
+                "height": "31px",
+                "padding-left": "3px"
+            });
+        }
+
+        function brandOpen() {
+            $(".filter-brand > ul > li > ul").attr("style", "").parent().attr("style", "");
+        }
+    }
+    filerMore();
+    filerBrand();
+    //价格的li+下面的距离
+    $('.filter-list > ul > li.price').siblings().css({
+        'margin-bottom': '10px'
+    });
+    //手动输入价格位数限制
+    function priceLimit(dom) {
+        $(dom).on("input", function () {
+            var c = $(this).val(),
+                l = c.length;
+            if (l > 8) {
+                $(this).val(c.slice(0, 8));
+            }
+        })
+    }
+    priceLimit(".price-from");
+    priceLimit(".price-to");
+    //显示全部筛选条件
+    function retractable(className, bool) {
+        $(".retractable-button >" + className).on("click", function () {
+            if (bool) {
+                $(".filter-row").slideDown();
+                filerMore();
+                $('.filter-button .button-close').hide();
+            } else {
+                for (var i = 0; i < $(".filter-row").length; i++) {
+                    if (i > 3) {
+                        $(".filter-row").eq(i).slideUp();
+                    }
+                }
+            }
+            $(this).hide();
+            $(this).siblings().show();
+        })
+    }
+    retractable(".open", 1);
+    retractable(".close", 0);
+
+    /*add by Apson*/
+    $(".product-nav input[type='checkbox']").on('click', function () {
+        window.location.href = $(this).attr('data-url');
+    });
+
+    $(".filter-option-reset").on('click', function () {
+        point_watch_filter_cancelall();
+        window.location.href = $(this).attr('data-url');
+    });
+
+    $(".screen-hover .cancel").on("click", function () {
+        $(".screen-hover .price-from").val("");
+        $(".screen-hover .price-to").val("");
+    })
+
+    $('button.price-filter').on('click', function () {
+        priceSearch($(this));
+    });
+
+    function priceEnter(dom) {
+        $(dom).on("keydown", function (e) {
+            if (e.keyCode == 13) {
+                priceSearch($(this));
+            }
+        })
+    }
+    priceEnter(".price-from");
+    priceEnter(".price-to");
+
+    function priceSearch(thisDom) {
+        var priceFrom = parseInt(thisDom.parents('section').find('.price-from').val());
+        var priceTo = parseInt(thisDom.parents('section').find('.price-to').val());
+        if (!priceFrom && !priceTo) {
+            return false;
+        }
+        if (!priceFrom) {
+            priceFrom = 0;
+        }
+        if (!priceTo) {
+            priceTo = 99999999;
+        }
+        priceFrom = priceFrom < 0 ? 0 : priceFrom;
+        priceTo = priceTo > 99999999 ? 99999999 : priceTo;
+        if (priceFrom > priceTo) {
+            var temp = priceFrom;
+            priceFrom = priceTo;
+            priceTo = temp;
+        }
+        point_watch_pricerange(priceFrom,priceTo);
+        var selected = priceFrom + '_' + priceTo;
+        var url = window.location.href;
+        if($('main').attr('data-typecode') == 'wa') {
+            url = changeURLArg(url, 'pr', selected, 'seo');
+        }else{
+            url = changeURLArg(url, 'price', selected, 'normal');
+        }
+        location.href = url;
+    }
+    //商品list翻页
+    $(".pages-num > button").on("click", function () {
+        var pNum = $(this).siblings(".jump").find("input").val();
+        var url = window.location.href;
+        if(url.indexOf('page=')>=0){
+            var i = url.indexOf('page=') + 5;
+            window.location.href = url.slice(0, i) + pNum;
+        }else{
+            if(url.indexOf("?") != -1){
+                window.location.href = url + '&page=' + pNum;
+            }else{
+                window.location.href = url + '?page=' + pNum;
+            }
+        }
+    })
+    $('.pages-num .jump input').on('keyup', function (e) {
+        if (e.keyCode == 13) {
+            $(".pages-num > button").click();
+        }
+    })
+    //底部tab栏
+    function swapTab(dom, tab1, tab2) {
+        $(dom).click(function () {
+            $(this).addClass("current").siblings().removeClass("current");
+            $(this).parent().parent().find(tab1).show().end().find(tab2).hide();
+        });
+    }
+    swapTab(".first-title", ".list-content1", ".list-content2");
+    swapTab(".second-title", ".list-content2", ".list-content1");
+
+    //品牌图片列表出现长图 处理
+    /*setTimeout(function () {
+        var imgList = $('.list-content > .list-top img');
+        for (var i = 0; i < imgList.length; i++) {
+            if (imgList.eq(i).height() > imgList.eq(i).width()) {
+                imgList.eq(i).css({
+                    'width': 'auto',
+                    'height': imgList.eq(i).width() + 'px'
+                })
+            }
+        }
+    }, 100);*/
+
+    //筛选条件被选择后filter栏默认展开
+    /*if ($('.filter-option-list').length) {
+        $('.retractable-button > .open').hide();
+        $('.retractable-button > .close').show();
+        $('.filter-row').show();
+    }*/
+})

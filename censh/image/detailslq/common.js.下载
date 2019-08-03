@@ -1,0 +1,178 @@
+//首页顶部弹出层
+$(function () {
+    $('.dropdown').hover(function () {
+        $(this).children('.dropdown-menu').show();
+    }, function () {
+        $(this).children('.dropdown-menu').hide();
+    });
+    $('.dropdown-men').hover(function () {
+        $(this).show();
+    }, function () {
+        $(this).hide();
+    });
+    $('.dropdown2').hover(function () {
+        $(this).children('.dropdown-menu2').fadeIn(100).css('margin-top', '12px');
+    }, function () {
+        $(this).children('.dropdown-menu2').fadeOut(100).css('margin-top', '20px');
+    });
+    $('.dropdown-men2').hover(function () {
+        $(this).fadeIn(100).css('margin-top', '12px');
+    }, function () {
+        $(this).fadeOut(100).css('margin-top', '20px');
+    });
+});
+//主菜单弹出层
+$(function () {
+    $('#menuLeftText').hover(function () {
+        $(this).siblings('#choose_guide_menu-default').show();
+    }, function () {
+        $(this).siblings('#choose_guide_menu-default').hide();
+    })
+    $('#choose_guide_menu-default').hover(function () {
+        $(this).show();
+    }, function () {
+        $(this).hide();
+    })
+    $('#choose_guide_menu-default .choose_guide .brandGrade').hover(function () {
+        $(this).addClass('cur');
+        $(this).find('.sideBox').show()
+    }, function () {
+        $(this).removeClass('cur');
+        $(this).find('.sideBox').hide()
+    });
+});
+$(function () {
+    $('.goToTop').click(function () {
+        $('html,body').animate({scrollTop: '0'}, 400);
+    });
+});
+$(function () {
+    $('.tag-page .content .left .tag-page-top p').each(function () {
+        var maxwidth = 160;
+        if ($(this).text().length > maxwidth) {
+            $(this).text($(this).text().substring(0, maxwidth));
+            $(this).html($(this).html());
+        } else if ($(this).text().length == 0) {
+            $(this).hide();
+            $(this).siblings('h2').css('margin-bottom', '0');
+        }
+    });
+});
+
+$(function () {
+    $('.censh-event-top .close').click(function () {
+        $(this).parents('.censh-event-top').slideUp();
+    });
+})
+
+$(window).scroll(function () {
+    // var ulTop=$('.header-bottom')[0].getBoundingClientRect().top;
+    if ($(window).scrollTop() >= 200) {
+        $('.goToTop').css('display', 'block')
+    } else {
+        $('.goToTop').css('display', 'none')
+    }
+})
+$(function () {
+    $('.header-center .right .option li').click(function () {
+        $(this).addClass('active').siblings('li').removeClass('active');
+        var index = $(this).index();
+        var type = $('.header-center .right .index-search .type');
+        $(type[index]).show().siblings().hide();
+    });
+});
+
+function getQueryString(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return decodeURIComponent(r[2]);
+    return null;
+}
+
+/*
+* by dsc 2019
+*
+* */
+var Calendar = function (date) {
+    this.curTime = date ? new Date(date) : new Date();
+    this.el = document.getElementById('calendar');
+    this.dateEl = document.getElementById('calendar-date');
+    this.curYear = this.curTime.getFullYear();
+    this.curMonth = this.curTime.getMonth();
+    this.curDate = this.curTime.getDate();
+    this.nowDate = new Date();
+};
+Calendar.prototype.init = function () {
+    var _self = this;
+    this.el.querySelector('.header>.prev').addEventListener('click', function () {
+        _self.prevClick();
+    }, false);
+    this.el.querySelector('.header>.next').addEventListener('click', function () {
+        _self.nextClick();
+    }, false);
+
+    this.render();
+};
+Calendar.prototype.isLeapYear = function (year) {
+    return (year % 400 === 0) || ((year % 4 === 0) && (year % 100 !== 0))
+};
+Calendar.prototype.render = function () {
+    this.children = [];
+    this.el.querySelector('.header>.date').innerText = this.curMonth + 1 + '月 ' + this.curYear;
+    var daysInMonth = [31, this.isLeapYear(this.curYear) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    var firstDayInMonth = new Date(this.curYear, this.curMonth, 1);
+    var lastDayInMonth = new Date(this.curYear, this.curMonth, daysInMonth[this.curMonth]);
+    var firstDayWeek = firstDayInMonth.getDay();
+    var lastDayWeek = lastDayInMonth.getDay();
+    var prevMonth = this.curMonth === 0 ? daysInMonth[11] : daysInMonth[this.curMonth - 1];
+    var li = null;
+    this.dateEl.innerHTML = '';
+    for (var _d = 0; _d < firstDayWeek; _d++) {
+        li = document.createElement('li');
+        li.innerHTML = "<a>" + (prevMonth - _d) + "</a>";
+        li.className = 'prev disabled';
+        this.dateEl.insertBefore(li, this.dateEl.firstChild)
+    }
+    for (var _m = 0; _m < daysInMonth[this.curMonth]; _m++) {
+        li = document.createElement('li');
+        li.innerHTML = "<a>" + (_m + 1) + "</a>";
+        if (this.nowDate.getDate() === (_m + 1)) {
+            if (this.curMonth === this.nowDate.getMonth() && this.curYear === this.nowDate.getFullYear()) {
+                li.className = 'now';
+            }
+        }
+        if(this.curDate === (_m + 1)){
+            if (this.curMonth === this.curTime.getMonth() && this.curYear === this.curTime.getFullYear()) {
+                li.className = 'hover';
+            }
+        }
+        this.children.push(li);
+        this.dateEl.appendChild(li)
+    }
+    for (var _y = 0; _y < 6 - lastDayWeek; _y++) {
+        li = document.createElement('li');
+        li.innerHTML = "<a>" + (_y + 1) + "</a>";
+        li.className = 'next disabled';
+        this.dateEl.appendChild(li)
+    }
+
+    if (typeof this.rendered === "function") {
+        this.rendered();
+    }
+};
+Calendar.prototype.prevClick = function () {
+    this.curMonth--;
+    if (this.curMonth < 0) {
+        this.curYear -= 1;
+        this.curMonth = 11;
+    }
+    this.render();
+};
+Calendar.prototype.nextClick = function () {
+    this.curMonth++;
+    if (this.curMonth > 11) {
+        this.curYear += 1;
+        this.curMonth = 0;
+    }
+    this.render();
+};
