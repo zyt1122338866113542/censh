@@ -1,0 +1,244 @@
+/* 头部 */
+header,footer{
+    margin: 0 auto;
+	width:100%;
+    height:168px;
+    display:block;
+    box-sizing:border-box;
+    background:#ffffff;
+    z-index:10;
+    position:relative;
+}
+ header .nav{
+	width:100%;
+    background:#f5f6f6;
+}
+ header .core{
+    height:75px;
+	width:100%;
+    background:#ffffff;
+}
+header .menu{
+    height:40px;
+	width:100%;
+    margin-top:50px;
+}
+ header .wrap{
+     width: 1200px;
+     margin:0 auto;
+ }
+ header .nav .wrap{
+    height:23px;
+    background:#f5f6f6;
+}	
+ header .core .wrap{
+    background:#ffffff;
+    padding-top:30px;
+}	
+header .menu .wrap{
+    height: 100%;
+    background-color:#3f3b3a;
+}
+ header .nav .wrap .u1 li{
+    float:left;	
+}
+ header .nav .wrap .u2 li{
+    float:right;
+}
+ header .nav .wrap li+li{
+    margin:0 20px;
+}
+ header .core .wrap .logo{
+    width:239.13px;
+    height:75px;
+    border:none;
+    float:left;
+}
+ header .core .wrap .logo .logo-wrap{
+    width:152px;
+    height:75px;
+    margin-right:30px;
+    float:left;
+}
+ header .core .wrap .logo .logo-wrap img{
+    height:48.38px;
+}
+ header .core .wrap .logo .store{
+    width:57.13px;
+    padding-top:5px;
+    float:left;  
+}
+ header .core .wrap .logo .store:fist-child{
+    width:57.13px;
+    height:32px;
+}
+ header .core .wrap .search{
+    width:485px;
+    height:75px;
+    margin-top:0px;
+    float:left;
+    margin-left:475px;
+} 
+ header .core .wrap .search .select {
+    position: relative;
+    width: 48px;
+    height:36px;
+    border: 1px solid #9f9d9c;
+    border-right: none;
+    float:left;
+}
+ header .core .wrap .search .select .name{
+    font-size: 12px;
+    color:#898989;
+    line-height: 36px;
+    text-align: center;
+}
+ header .core .wrap .search .select .name:after{
+    content:"";
+    display:block;
+    float:left;
+    bottom:2px;
+    right:2px;
+    border-bottom:10px solid #be0008;
+    border-left:10px solid transparent;
+    margin:-12px 36px;
+}
+ header .core .wrap .search .product{
+    float:left;
+}
+ header .core .wrap .search form{
+    width: 350px;
+    height: 36px;
+    margin-right: 20px;
+    border:1px solid #9f9d9c;
+    font-size: 12px;
+    color: #898989;
+}
+ header .core .wrap .search form input{
+    height: 100%;
+    width: 80%;
+    padding: 0 10px;
+    font-size: 12px;
+    outline-style: none;
+    border:none;
+}
+ header .core .wrap .search form button{
+    height: 100%;
+    width:20%;
+    float:right;
+    margin-top:-36px;
+    background-image:url(../image/images/icon_side.png);
+    background-size:100%;
+    background-position: 134px -140px;
+    background-color: #3f3a3a;	
+    cursor: pointer;
+}
+ header .core .wrap .search form .swiper-container{
+    width:400px;
+    height:20px;
+    float:right;
+    margin-top:5px;
+    border:1px solid #f00;
+}
+ header .core .wrap .search .cart{
+    display: block;
+    float:right;
+    width:50px;
+    height:50px;
+    background-image: url(../image/images/icon_side.png);
+    background-size:175%;
+    background-position: 176px -218px;
+    margin-top:-39px;
+    margin-right: 20px;	
+}
+ header .core .wrap .search .cart .ccart-num{
+    display: block;
+    float:right;
+    width:16px;
+    height:16px;
+    line-height:16px;
+    border-radius:10px;
+    background-color:#000;
+    text-align:center;
+    font-size:12px;
+    color:#fff;
+    margin-top:-2px;
+    margin-right: -8px;	
+}
+ header .menu .wrap .item{
+    float:left;
+    line-height:40px;
+}
+ header .menu .wrap .item .hasChild{
+    height:100%;
+    padding:0 27px;
+    font-size:15px;
+    color:#fff;
+    cursor:pointer;	
+}
+
+/* 尾部 */
+footer{
+    margin-top: 50px;
+}
+footer .footer-icon{
+    width: 100%;
+    height: 43px;
+    padding: 11px 0;
+    background-color: #3f3b3a;
+    color: #fff;
+}
+footer .core{
+    width: 1200px;
+    margin: 0 auto;
+}
+footer .core ul li{
+    float: left;
+    width: 20%;
+    padding-left: 5%;
+}
+footer .core ul li i{
+    float: left;
+    width: 45px;
+    height: 45px;
+    background: url(../image/images/footer_sprites.png) 0 0/101px 101px no-repeat;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+footer .core ul li i.icon2{
+    background: url(../image/images/footer_sprites.png) 0 0/101px 101px no-repeat;
+    background-position: 0px -57px;
+}
+footer .core ul li i.icon3{
+    background: url(../image/images/footer_sprites.png) 0 0/101px 101px no-repeat;
+    background-position: -58px -57px;
+}
+footer .core ul li i.icon4{
+    background: url(../image/images/footer_sprites.png) 0 0/101px 101px no-repeat;
+    background-position: -58px 2px;
+}
+footer .core ul li strong{
+    display: block;
+    height: 20px;
+    font-size: 16px;
+    font-weight: 900;
+    margin-top: 2px;
+}
+footer .footer-message{
+    margin-top: 5px;
+    border-top: 2px solid #000;
+    background-color: #f6f7f7;
+}
+footer .footer-message .about-us{
+    padding: 15px 0 30px;
+} 
+footer .footer-message .about-us .about-us-left{
+    width: 15%;
+    margin: 30px 5% 0;
+    text-align: center;
+}
+footer .footer-message .about-us .about-us-left .tel{
+    font-size: 20px;
+    font-weight: 900;
+    color: #231815;
+}
