@@ -87,49 +87,37 @@ header .menu .wrap{
     border-right: none;
     float:left;
 }
- header .core .wrap .search .select .name{
+header .core .wrap .search .select .name{
     font-size: 12px;
     color:#898989;
     line-height: 36px;
     text-align: center;
 }
-/* 把产品的内容写成下拉的形式 */
-header .core .wrap .search .select .dropdown{
-    position: relative;
-}
-header .core .wrap .search .select .dropdown-toggle::after {
-    display: inline-block;
-    width: 0;
-    height: 0;
-    margin-left: 0.255em;
-    vertical-align: 0.255em;
-    content: "";
-    border-top: 0.3em solid;
-    border-right: 0.3em solid transparent;
-    border-bottom: 0;
-    border-left: 0.3em solid transparent;
-  }
-  header .core .wrap .search .select .dropdown-toggle:empty::after {
-    margin-left: 0;
-  }
-header .core .wrap .search .select .dropdown-menu{
-    position: absolute;
-    top:100%;
-    left: 0;
-    z-index: 1000;
+header .core .wrap .search .select  .dropdown{
     display: none;
-    float: left;
-    min-width: 10rem;
-    padding: 0.5rem 0;
-    margin: 0.125rem 0 0;
-    font-size: 1rem;
-    color: #212529;
-    text-align: left;
-    list-style: none;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid rgba(0, 0, 0, 0.15);
+    width:49px;
+    position: absolute;
+    top: 30px;
+    left: -1px;
 }
+header .core .wrap .search .select .dropdown li{
+    widows: 100%;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #9f9d9c;
+    color: #898989;
+    text-align: center;
+    cursor: pointer;
+    background-color: #fff;
+
+}
+header .core .wrap .search .select:hover>ul.dropdown{
+    display: block;
+}
+header .core .wrap .search .select .dropdown li:hover{
+    background: #000;
+}
+
 
  header .core .wrap .search .select .name:after{
     content:"";
@@ -207,12 +195,72 @@ header .core .wrap .search .select .dropdown-menu{
     float:left;
     line-height:40px;
 }
+header .menu .wrap .item:hover .sub{
+    display: block;
+
+}
  header .menu .wrap .item .hasChild{
     height:100%;
     padding:0 27px;
     font-size:15px;
     color:#fff;
     cursor:pointer;	
+}
+header .menu .wrap .item .sub{
+    display: none;
+    position: relative;
+    top:1px;
+    left: 0;
+    width: 1200px;
+    padding: 25px 45px;
+    overflow: hidden;
+    background-color: #fff;
+  
+}
+header .menu .wrap .item .sub .tab.on{
+    display: flex;
+}
+header .menu .wrap .item .sub .tab{
+    width: 100%;
+    flex-flow: row nowrap;
+}
+header .menu .wrap .item .sub .tab .list.col4{
+    widows: 245px;
+}
+header .menu .wrap .item .sub .tab .list{
+    flex: none;
+    min-height: 240px;
+    margin-right: 40px;
+    border-right: 1px solid #d2d2d2;
+    overflow: hidden;
+}
+header .menu .wrap .item .sub .tab .list dl{
+    widows: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+}
+header .menu .wrap .item .sub .tab .list dl:first-child dt{
+    margin-top: 0;
+}
+header .menu .wrap .item .sub .tab .list dl dt{
+    width: 100%;
+    font-size: 12px;
+    font-weight: 700;
+}
+header .menu .wrap .item .sub .tab .list.col4>dl dd{
+    width: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+header .menu .wrap .item .sub .tab .list dl dd{
+    margin-top: 24px;
+}
+header .menu .wrap .item .sub .tab .list dl dd a{
+    display: block;
+    overflow: hidden;
+    font-size: 12px;
+    white-space: nowrap;
+    margin-right: 10px;
 }
 
 /* 尾部 */

@@ -69,3 +69,468 @@ main section.filter .filter-option .filter-option-reset{
     right: 15px;
     cursor: pointer; 
 }
+main section.filter .filter-row{
+    border: 1px solid #eee;
+    border-top:none;
+    overflow: hidden; 
+}
+main section.filter .filter-row .filter-title{
+    width: 120px;
+    line-height: 26px;
+    padding-left: 20px;
+    padding-top: 7px;
+    float: left;
+    background: #f6f6f6;
+    box-sizing: border-box;
+    font-weight: 900;
+    padding-bottom: 500px;
+    margin-bottom: -500px;
+}
+main section.filter .filter-row .filter-list{
+    margin-left: 140px;
+    padding-right: 70px;
+    padding-bottom: 500px;
+    margin-bottom: -500px;
+    position: relative;
+}
+main section.filter .filter-row .filter-list>ul{
+    line-height: 26px;
+    padding: 7px 0;
+}
+main section.filter .filter-row .filter-list>ul>li{
+    float: left;
+    cursor: pointer;
+}
+main section.filter .filter-row .filter-list>ul>li span{
+    display: inline-block;
+    padding: 0 6px;
+    margin-right: 4px;
+    color: #343434;
+}
+main section.filter .filter-row .filter-button{
+    position: absolute;
+    top:7px;
+    right: 15px;
+}
+main section.filter .filter-row .filter-button button{
+    height: 26px;
+    line-height: 26px;
+    padding: 0 16px 0 5px;
+    font-size: 12px;
+    cursor: pointer;
+}
+main section.filter .filter-row .filter-button button.button-more{
+    /* 差一个背景图片*/
+    /* background: url(../../image/) */
+}
+main section.filter .filter-row .filter-button button.button-close{
+    /* 差一个背景图片*/
+    /* background: url(../../image/) */
+}
+main section.filter .retarctable-button{
+    position: relative;
+}
+main section.filter .retarctable-button button{
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    margin-left: -87px;
+    padding: 5px 42px 5px 25px;
+}
+main section.filter .retarctable-button button.open{
+    /* 差一个背景图片*/
+    /* background: url(../../image/) */
+}
+main section.filter .retarctable-button button.close{
+    /* 差一个背景图片*/
+    /* background: url(../../image/) */
+}
+/* 第二个section */
+main section.product-nav{
+    height: 45px;
+    padding: 0 30px;
+    box-sizing: border-box;
+    border: 1px solid #ededed;
+    background: #f6f6f6;
+    margin-top: 55px;
+}
+main section.product-nav .product-nav-left .screen1{
+    margin-top: 10px;
+}
+main section.product-nav .product-nav-left .screen1 a.current{
+    background: #e51f1d;
+    color: #fff;
+    text-decoration: none;
+    border-color: #e51f1d;
+}
+main section.product-nav .product-nav-left .screen1 a{
+    float: left;
+    height: 23px;
+    width: 55px;
+    border: 1px solid #d9d9d9;
+    border-right: none;
+    text-align: center;
+    box-sizing: border-box;
+}
+main section.product-nav .product-nav-left .screen2{
+    display: inline-block;
+    width: 210px;
+    color: #a3a3a3;
+    margin-left: 25px;
+    position: relative;
+}
+main section.product-nav .product-nav-left .screen2 span{
+    display: inline-block;
+    margin-top: 12px;
+}
+main section.product-nav .product-nav-left .screen2 .screen-hover{
+    width: 175px;
+    height: 65px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 30px;
+    padding: 0 5px 10px;
+}
+main section.product-nav .product-nav-left .screen2 .screen-hover .top{
+    margin-top: 11px;
+}
+main section.product-nav .product-nav-left .screen2 .screen-hover .top input{
+    width: 70px;
+    height: 18px;
+    border: 1px solid #d9d9d9;
+    text-align: center;
+    box-sizing: border-box;
+}
+main section.product-nav .product-nav-left .screen2 .screen-hover .bottom{
+    margin-top: 12px;
+    display: none;
+}
+main section.product-nav .product-nav-left .screen2 .screen-hover .bottom button{
+    width: 70px;
+    height: 20px;
+    border: none;
+    cursor: pointer;
+}
+main section.product-nav .product-nav-left .screen2 .screen-hover .bottom button.cancel{
+    background-color: #fff;
+    color: #a3a3a3;
+}
+main section.product-nav .product-nav-left .screen2 .screen-hover .bottom button.save{
+    background-color: #e51f1d;
+    color: #fff;
+    margin-left: 8px;
+}
+main section.product-nav .product-nav-left .screen3{
+    margin-top: 10px;
+}
+main section.product-nav .product-nav-left .screen3 input{
+    margin: 2px 0 0 20px;
+    vertical-align: -4px;
+    cursor: pointer;
+}
+main section.product-nav .product-nav-left .screen3 label{
+    color: #747474;
+    vertical-align: middle;
+    cursor: pointer;
+}
+main section.product-nav .product-nav-right{
+    line-height: 45px;
+}
+main section.product-nav .product-nav-right .total-red{
+    color: #e51f1d;
+    font-weight: 700;
+    padding: 0 5px;
+}
+/* main section.product-list{
+    margin-top: 32px;
+} */
+main section.product-list ul{
+    padding-left: 0;
+    margin-top: 0;
+}
+main section.product-list li:nth-child(-n+4){
+    margin-top: 0;
+}
+main section.product-list li:nth-child(4n+4){
+    margin-right: 0;
+}
+main section.product-list li.list-content{
+    float: left;
+    box-sizing: border-box;
+    width: 23%;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    box-shadow: 0 3px 9px 4px rgba(0, 0, 0, .1);
+    margin: 45px 2% 0 0;
+    padding: 5px 15px 10px;
+    position: relative;
+}
+main section.product-list li.list-content:hover{
+    border: 1px solid #e51f1d;
+}
+main section.product-list li.list-content label{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    display: none;
+    cursor: pointer;
+}
+main section.product-list li.list-content label input{
+    vertical-align: -2px;
+    cursor: pointer;
+}
+main section.product-list li.list-content .list-top{
+    z-index: 0;
+    position: relative;
+}
+main section.product-list li.list-content .list-top a{
+    display: block;
+    width: 100%;
+}
+main section.product-list li.list-content .list-top a img{
+    box-sizing: border-box;
+    width: auto;
+    height: 270px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+main section.product-list li.list-content .list-bottom{
+    padding-top: 8px;
+    border-top: 1px solid #dadada;
+}
+main section.product-list li.list-content .list-bottom h2{
+    height: 36px;
+    font-weight: 400;
+    overflow: hidden;
+}
+main section.product-list li.list-content .list-bottom h2 a{
+    color: #222;
+    word-break: break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* 不知道是什么 */
+    display: -webkit-box;
+
+}
+main section.product-list li.list-content .list-bottom p{
+    width: 100%;
+    font-size: 14px;
+    margin: 12px 0;
+    color: #aaa;
+}
+main section.product-list li.list-content .list-bottom p>.original-price{
+    color: #e51f1d;
+}
+main section.product-list li.list-content .list-bottom p>.sales-volume{
+    float: right;
+    font-size: 12px;
+}
+main section.product-list li.list-content .list-bottom>.tags{
+    width: 100%;
+    height: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-flow: row nowrap;
+}
+main section.product-list li.list-content i.hot-pro{
+    /* 图片不对 */
+    background-image: url(../../image/images/icon_side.png);
+}
+main section.product-list li.list-content i{
+    position: absolute;
+    z-index: 2;
+    left: -1px;
+    top: 15px;
+    width: 38px;
+    height: 20px;
+    background-size: 38px 19px;
+}
+main section.page-control{
+    margin-top: 50px;
+    height: 26px;
+    text-align: center;
+}
+main section.page-control .page-box{
+    display: inline-block;
+}
+main section.page-control .page-box ol{
+    float: left;
+}
+main section.page-control .page-box ol li{
+    font-size: 12px;
+
+    line-height: 24px;
+    padding: 0 2px;
+    border: 1px solid #ededed;
+    text-align: center;
+    cursor: pointer;
+    display: inline;
+    margin: 0 2px;
+}
+main section.page-control .page-box li a{
+    color: #2d2d2d;
+    min-width: 23px;
+    height: 23px;
+    display: inline-block;
+    text-decoration: none;
+}
+main section.page-control .page-box li.current{
+    background: #4b4b4b;
+    min-width: 23px;
+}
+main section.page-control .page-box li.current a{
+    color: #fff;
+}
+main section.page-control .page-box .page-num{
+    margin-left: 10px;
+    margin-top: 10px;
+    height: 26px;
+    line-height: 26px;
+    font-size: 12px;
+    color: #343434;
+    float: left;
+}
+main section.page-control .page-box .page-num .total{
+    margin-right: 5px;
+    overflow: hidden;
+}
+main section.page-control .page-box .page-num .jump input{
+    display: inline-block;
+    border: 1px solid #ededed;
+    width: 25px;
+    height: 24px;
+    text-align: center;
+    margin-left: 5px;
+    font: 12px/15px "microsoft yahei",Arial;
+    color: #2f2f2f;
+    margin-top: -6px;
+}
+main section.page-control .page-box .page-num button{
+    height: 26px;
+    padding: 0 10px;
+    background: #2d2d2d;
+    border: none;
+    color: #fff;
+    text-align: center;
+    margin-left: 10px;
+    cursor: pointer;
+    font: 12px/15px "microsoft yahei",Arial;
+    margin-top: -6px;
+}
+ section.seo_ranking{
+    width: 100%;
+    padding-top:50px;
+    display: flex;
+    flex-wrap: row wrap;
+    justify-content: space-between; 
+    box-sizing: border-box;
+}
+ section.seo_ranking .group{
+    flex: none;
+    width: 24%;
+}
+ section.seo_ranking .group h2{
+    color: #bea377;
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+ section.seo_ranking .group .tabs{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    border: 1px solid #c1c1c1;
+    border-bottom: none;
+}
+ section.seo_ranking .group .tabs .item.on{
+    background: #fff;
+    pointer-events: none;
+}
+ section.seo_ranking .group .tabs .item{
+    flex: none;
+    width: 50%;
+    padding: 12px 0;
+    color: #000;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+    background-color:#c1c1c1; 
+}
+ section.seo_ranking .group .lists{
+    width: 93%;
+    padding: 10px;
+    border: 1px solid #c1c1c1;
+    border-top: none;
+}
+ section.seo_ranking .group .lists ul{
+    width: 100%;
+    padding: 0;
+}
+ section.seo_ranking .group .lists ul.on{
+    display: block;
+}
+ section.seo_ranking .group .lists ul li{
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    line-height: 1.8;
+}
+section.seo_active{
+    box-sizing: border-box;
+    width: 100%;
+    padding-top: 50px;
+}
+section.seo_active h2{
+     width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    color: #e51f1d;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+section.seo_active h2:before{
+    margin-right: 20px;
+}
+section.seo_active h2:before,section.seo_active h2:after{
+    content: "";
+    flex: auto;
+    display: block;
+    width: auto;
+    height: 2px;
+    background-color: #e51f1d;
+}
+section.seo_active h2:after{
+    margin-left: 20px;
+}
+section.seo_active ul{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 0;
+}
+section.seo_active ul li{
+    flex: none;
+    width: 32%;
+}
+section.seo_active ul li a{
+    display: block;
+    width: 100%;
+}
+section.seo_active ul li a img{
+    width: 100%;
+    height: auto;
+}
+h2.desc{
+    display: block;
+    padding-top:50px;
+    width: 100%;
+    font-size: 12px;
+    line-height: 1.6; 
+}

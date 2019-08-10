@@ -3,13 +3,14 @@ main{
     margin:0 auto;
     box-sizing:border-box;	
     /* z-index:11; */
-    /* position:relative; */
+    position:relative;
     margin-top: 20px;
 }
 main section{
     margin-bottom: 50px;
+  
 }
-section .new,section .brand,section .store{
+ .new, .brand,.store{
     width: 1200px;
 } 
 /* 都是采用弹性布局 */
@@ -24,24 +25,32 @@ section .new,section .brand,section .store{
     text-decoration: underline;
     /* color: #343434; */
 }
-section .banner .swiper-container-lunbotu{
+/* .banner{
+    position: absolute;
+    top: 0;left: 0;
+} */
+
+.banner .swiper-container-lunbotu{
     width: 1200px;
     height: 512px;
     margin-bottom:15px; 
     margin: 0 auto;
-    position: relative;
+ 
+    
     
 }
 /* 轮播图图片没有加效果 */
-section .swiper-container-lunbotu .swiper-wrapper img{
+.swiper-container-lunbotu .swiper-wrapper img{
     height:512px;
     width: 1200px;
     margin-bottom: 10px;
+    position: absolute;
+    top: 0;left: 0;
 }
-section .banner .small-banner {
+.banner .small-banner {
     width: 100%;
     height:190px;
-    background-color: #be0008;
+    margin-top:10px;
     margin-bottom: 50px;  
     
 }
@@ -155,16 +164,13 @@ section .banner .small-banner {
     left: 50%;
     margin-left: -8px;
 }
-.hot .content ol li .active{
+.hot .content ol:hover li.active{
     background: #e51f1d;
 }
-/* .hot .content ul{
+.hot .content ul{
     display: none;
 }
-.hot .content ul .active{
-    display: block;
-} */
-.hot .content ul{
+.hot .content  ul.active{
     display: block;
 }
 .hot .content ul li{
