@@ -1,0 +1,9 @@
+.col-main{
+    position: relative;
+}
+main section.breadcrumbs{
+    padding: 20px 0;
+}
+main section.breadcrumbs ul li{
+    float: left;
+}
