@@ -1,0 +1,177 @@
+*{margin:0;padding:0}
+		.full{
+			width:1500px;
+			height:780px;
+			background:#fff;
+		}
+		.header{
+			width:100%;
+			height:120px;		
+		}
+		.header .logo{
+			width:150px;
+			height:50px;
+			padding-top:40px;
+			padding-left:50px;
+		}
+		.header .iphone{
+			float: right;
+		
+		}
+		.header .download{
+			text-decoration:none;
+			font-size:15px;
+			color:red;
+			text-align:buttom;
+			float:right;
+			margin-right: 100px;
+			
+		}
+		.container{
+			width:100%;
+			height:588px;
+			padding-bottom:62px;
+			background:#e9f2fb;
+		}
+		.container .img{
+			padding-left:150px;
+			float:left;
+		}
+		.login-content{
+			width:25%;
+			margin-top:50px;
+			padding:40px 30px;
+			border-right:1px solid #e5e5e5;
+			background-color:#fff;
+		    float: left;
+		}
+		.login-content-btns{
+			height:20px;
+			padding-bottom:20px;
+			margin-bottom:34px;
+			box-sizing:border-box;
+			border-bottom:1px solid #e5e5e5;
+			color:#666;
+			font-weight:700;
+			font-size:20px;
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: center;
+			align-items: center;			
+		}
+		.login-content-btns>.item.on{
+			color:#e51f1d;;
+		}
+		.login-content-btns>.item{
+			font-size: 20px;
+			line-height: 1;
+			cursor: pointer;
+		}
+		.login-content-btns>.item:first-child{
+			margin-right: 30px;
+			border-right: 1px solid #e5e5e5;
+			padding-right: 30px;
+		}
+		.login-content-view{
+			width:100%;
+			overflow: hidden;
+		}
+		.login-content input{
+			width:auto;
+			height: 40px;
+			padding-left: 36px;
+			border:1px solid #c9c9c9;
+			background: #fff;
+		}
+		.login-content-mode{
+			width:100%;
+			display: flex;
+			flex-flow: row nowrap;
+			transition: transform .5s linear .5s;
+		}
+		.login-content-view .item{
+			width:100%;
+			height:50px;			
+			padding: 0 4%;
+			display: flex;
+			flex-flow: column nowrap;
+		}
+		.login-content-inputBox.username{
+			display: flex;
+			flex-flow: row nowrap;
+		}
+		.login-content-inputBox{
+			width:100%;
+			position: relative;
+			margin-bottom: 30px;
+		}
+		/* 写到这里 */
+
+
+		#upwd{
+			margin-top:20px;
+		}
+		.btn{
+			width:305px;
+			height:40px;
+			margin-top:20px;
+			background:red;
+			color:#fff;
+			line-height:40px;
+			border-radius:1px;
+			border:none;
+		}
+		.forget a{
+			padding-top:20px;
+			text-decoration:none;
+			float:right;
+			color:#000;
+			font-size:14px;
+		}
+		.login-other{
+			width:340px;
+			height:160px;
+			box-sizing:border-box;
+			margin:50px 30px;
+			padding:40px 30px;
+			background-color:#fff;
+			float:left;
+		}
+		.login-other .headline p{
+			width:140px;
+			height:25px;
+			margin:20px;
+			padding-left:23px;
+			line-height:25px;
+			font-size:13px ;
+			color:#666;
+		}
+		ul{
+			list-style:none;
+			font-size:5px;
+			color:#666;
+			float:left;
+		}
+		.three{
+			width:200px;
+			height:30px;
+            margin:20px;
+			padding-left:23px;
+			line-height:30px;
+			font-size:13px ;
+			color:#666;
+			float:left;
+		}
+		li{
+			float:left;
+		}
+		.wechat{
+			width:80px;
+			margin-left:-30px;
+		}
+		.weibo{
+			width:80px;
+		}
+		.qq{
+			width:50px;
+		}
