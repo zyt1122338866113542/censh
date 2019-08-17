@@ -13,8 +13,12 @@ main section{
  .new, .brand,.store{
     width: 1200px;
 } 
+main .core{
+    width: 1200px;
+    margin: 0 auto 50px;
+}
 /* 都是采用弹性布局 */
-.banner .small-banner ul,.part .title-pic,.store .container .core ul,.video .tab1,.tab2{
+.part .title-pic,.store .container .core ul,.video .tab1,.tab2{
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
@@ -23,21 +27,12 @@ main section{
 /* 视频专区和表友晒单a标签的悬停效果 */
 .video ul li a:hover,.share ul li a:hover,.news .container .r .content ul li a:hover,.news .container .content dl dd a:hover{
     text-decoration: underline;
-    /* color: #343434; */
 }
-/* .banner{
-    position: absolute;
-    top: 0;left: 0;
-} */
-
 .banner .swiper-container-lunbotu{
     width: 1200px;
     height: 512px;
     margin-bottom:15px; 
-    margin: 0 auto;
- 
-    
-    
+    margin: 0 auto 15px;  
 }
 /* 轮播图图片没有加效果 */
 .swiper-container-lunbotu .swiper-wrapper img{
@@ -49,15 +44,52 @@ main section{
 }
 .banner .small-banner {
     width: 100%;
-    height:190px;
-    margin-top:10px;
-    margin-bottom: 50px;  
+    height:190px; 
     
 }
  .banner .small-banner ul {
 	width:100%;
 	height:190px;
     margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+}
+.banner .small-banner ul li{
+    flex: none;
+    width: 32.5%;
+    height: 190px;
+    background-color: #eee;
+    position: relative;
+    overflow: hidden;
+    transition: 1s;
+}
+.banner .small-banner ul li a{
+    display: block;
+}
+.banner .small-banner ul li a img{
+    widows: 100%;
+    height: 100%;
+}
+.banner .small-banner ul li>.info{
+    pointer-events: none;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    background-color: rgba(255, 255, 255, .6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    color: #221815;
+    text-align: center;
+    line-height: 55px;
+}
+.banner .small-banner ul li:hover .info{
+    height: 55px;
+    transition: .5s;
+
 }
 .title{
     position: relative;
@@ -262,6 +294,26 @@ main section{
 .part .title-pic li img{
     width: 100%;
 }
+.part .title-pic li{
+    transition: 1s;
+    overflow: hidden;
+    position: relative;
+}
+.part .title-pic li p{
+    color: #fff;
+    width:100%;
+    height: 0;
+    position: absolute;
+    bottom: 0;
+    font-size: 18px;
+    background-color: rgba(0, 0, 0, .5);
+    text-align: center;
+    line-height: 30px;
+}
+.part .title-pic li:hover>p{
+    height: 30px;
+    transition: .5s;
+}
 .part .product-pic li{
     float: left;
     width: 16.6%;
@@ -273,6 +325,7 @@ main section{
     padding: 0 15%;
     border-right: 1px solid #dedede;
 }
+
 .part .product-pic li h4{
     line-height: 18px;
     height: 36px;
@@ -330,8 +383,7 @@ main section{
     line-height: 28px;
     font-size: 20px;
     color: #b7a46c;
-    overflow: hidden;
-    
+    overflow: hidden;  
 }
 .store .container .core ul li a p{
     height: 36px;
@@ -397,26 +449,27 @@ main section{
     width: 324px;
     height: 208px;
     margin-bottom: 25px;
-    z-index: 30;
+    transition: 1s;
+    position: relative;
 }
-.news .container .r .content .pic p,.news .container .content .pic p{
+.news .container .content .title p,.news .container .content .pic p{
     width: 100%;
+    height: 0;
     text-align: center;
     font-size: 14px;
     line-height: 28px;
     color: #fff;
     background: rgba(0, 0, 0, .5);
     position: absolute;
-    left: 0;
-    bottom: -27px;
+    bottom: 0;
     text-overflow: ellipsis;
     white-space: nowrap;
-    transition:1s;
-    z-index: 40;
+    text-align: center;
+    line-height: 30px;
 }
-.news .container .r .content .pic>p:hover,.news .container .content .pic p:hover{
-    display: block;
-    transform:translateY(-26px);  
+.news .container .content .title:hover p,.news .container .content .pic:hover p{
+    height: 30px;
+    transition: .5s;
 }
 .news .container .r .content ul li{
     text-overflow: ellipsis;
