@@ -2,7 +2,6 @@ main{
     width:1200px;
     margin:0 auto;
     box-sizing:border-box;	
-    /* z-index:11; */
     position:relative;
     margin-top: 20px;
 }
@@ -93,7 +92,7 @@ main .core{
 }
 .title{
     position: relative;
-    border: 2px solid #e51f1d;
+    border-top: 2px solid #e51f1d;
     margin-bottom: 25px;
 }
 .title>h2{
@@ -108,14 +107,32 @@ main .core{
     left: 50%;
     margin-left: -135px;
 }
-.title>h2>.new{
+.title>h2> .new{
     background-position: 0 0;
 }
 .title>h2 .hot{
-    background-position: -45PX 0;
+    background-position: -45px 0;
+}
+.title>h2 .brand{
+    background-position: -90px 0;
 }
 .title>h2 .part{
     background-position: -133px 0;
+}
+.title>h2 .store{
+    background-position: -175px 0;
+}
+.title>h2 .video{
+    background-position: -225px 0;
+}
+.title>h2 .news{
+    background-position: -270px 0;
+}
+.title>h2 .rank{
+    background-position: -322px 0;
+}
+.title>h2 .share{
+    background-position: -373px 0;
 }
 .title>h2>i{
     display: inline-block;
@@ -123,7 +140,7 @@ main .core{
     height: 30px;
     vertical-align: bottom;
     margin-right: 10px;
-    background: url(../image/images/title-icon.png)
+    background: url(../../image/images/title-icon.png) no-repeat;
 }
 .title>h2>span{
     font-size: 14px;
@@ -146,6 +163,9 @@ main .core{
     width: 12.66666%;
     padding: 0 2%;
 }
+.new ul li:hover h2{
+    color: #e51f1d;
+}
 .new ul li h2{
     margin: 10px 0 5px;
     color: #717071;
@@ -153,7 +173,7 @@ main .core{
     line-height: 18px;
     height: 54px;
 }
-.new u li p{
+.new ul li p{
     color: #e51f1d;
     font-size: 14px;
 }
@@ -285,6 +305,10 @@ main .core{
     width: 10%;
     margin-bottom: 5px;
 }
+.brand .container>dl.likeit>dd a:hover{
+    color: #343434;
+    text-decoration: underline;
+}
 .part{
     text-align: center;
 }
@@ -318,6 +342,9 @@ main .core{
     float: left;
     width: 16.6%;
     text-align: left;
+}
+.part .product-pic li:hover h4{
+    color: #e51f1d;
 }
 .part .product-pic li img{
     width: 70%;
@@ -405,6 +432,11 @@ main .core{
 }
 .video .tab1,.tab2{
     margin-top: 50px;
+}
+.video .tab1 li:hover a>p,.video .tab2 li:hover a>p{
+    color: #343434;
+    text-decoration: underline;
+
 }
 .video .tab2{
     margin-top: 30px;
@@ -557,6 +589,10 @@ main .core{
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+.rank .content ul li:hover a{
+    color: #343434;
+    text-decoration: underline;
+}
 .rank .content ul li .one{
     background-color: #b5a26c;
 }
@@ -592,4 +628,28 @@ main .core{
     color: #fff;
     margin-right: 5px;
     padding: 4px;
+}
+.share ul{
+    margin-top: 50px;
+}
+.share ul li{
+   
+   float: left;
+   width: 19%;
+   margin-right: 1%;
+}
+.share ul li img{
+    width: 100%;
+    height: 152px;
+}
+.share ul li a:hover{
+    color: #595757;
+}
+.share ul li a p{
+    height: 36px;
+    line-height: 18px;
+    overflow: hidden;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
 }
