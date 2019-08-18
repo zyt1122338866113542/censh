@@ -34,7 +34,6 @@
 			<div class="img">
 				<img src="../../image/login/logo.png" alt="" class="logo">
 				<h3>
-					<!-- <img src="../../image/login/police1.jpg" alt="" class="iphone"> -->
 					<a href="#" class="download">下载盛世APP</a>
 				</h3>
 			</div>
@@ -45,23 +44,24 @@
 			</div>
 			<div class="login-content">
 				<div class="login-content-btns">
-					<div class="item on" id="newLogin">手机号登录</div>+
+					<div class="item on" id="newLogin">手机号登录</div>
 					<div class="item" id="oldLogin">账号登录</div>
 				</div>
 				<div class="login-content-view">
-					<div class="login-content-mode">
+					<div>
+						<!-- <input type="hidden" name="form_key" id="form_key" value="400a6aa81665"> -->
 						<div class="item">
 							<div class="login-content-inputBox username">
 								<input type="text" name="old_name" placeholder="请输入手机号"  id="uname">
-							    <input type="password" name="upwd" placeholder="获取验证码" id="getSMS">
+							    <input type="button"  value="获取验证码" id="getSMS">
 								<div class="login-content-inputBox-msg"></div>
 							</div>
 							<div class="login-content-inputBox SMSCode">
-								<input type="text" name="ucode" placeholder="请输入短信验证码"  id="ucode" maxlength="6">
+								<input type="text" name="ucode" value=""  placeholder="请输入短信验证码"  id="ucode" maxlength="6">
 								<div class="login-content-inputBox-msg"></div>
 							</div>
 							<div class="login-content-inputBox submit">
-								<button onclick="login()" class="btn">登录</button>	
+								<input type="button" id="submit" value="注册&登录">
 							</div>
 							<div class="login-content-agreement">
 								<input type="checkbox" checked="checked" id="uagree">
@@ -71,20 +71,47 @@
 								</label>
 							</div>
 						</div>
+						<div class="item hide">
+							<div class="login-content-inputBox other">
+								<input type="text" name="old_name" placeholder="请输入手机号"  id="uname" maxlength="11">
+								<div class="login-content-inputBox-msg"></div>
+							</div>
+							<div class="login-content-inputBox password">
+								<input type="password" name="old_pwd" value=""  placeholder="请输入密码"  id="upwd" maxlength="6">
+								<div class="login-content-inputBox-msg"></div>
+							</div>
+							<div class="login-content-inputBox submit">
+								<input type="button" id="osubmit" value="登录">
+							</div>
+							<div class="login-content-forget">
+								<a href="">忘记密码?</a>
+							</div>
+						</div>
   	 				</div>
   				</div>
 				<div class="login-other">
 					<div class="headline"><p>使用第三方登录</p></div>
 						<div class="three">
 							<ul>
-								<li class="wechat">微信	</li>
-								<li class="weibo">微博</li>
-								<li class="qq">QQ</li>
+								<li class="wechat">
+									<span id="wxLoginBtn"></span>
+									<p>微信</p>
+								</li>
+								<li class="weibo">
+									<span id="wbLoginBtn"></span>
+									<p>微博</p>
+								</li>
+								<li class="qq">
+									<span id="qqLoginBtn"></span>
+									<p>QQ</p>
+								</li>
 							</ul>
 						</div>						
 					</div>
 				</div> 						
 			</div>
 	</div>
+	<script src="../js/jquery-1.11.3.js"></script>
+	<script src="../js/login.js"></script>
 </body>
 </html>

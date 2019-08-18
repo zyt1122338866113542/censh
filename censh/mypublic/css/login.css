@@ -1,4 +1,13 @@
 *{margin:0;padding:0}
+		.color{
+			background: pink;
+		}
+		.show{
+			display: block;
+		}
+		.hide{
+			display: none;
+		}
 		.full{
 			width:1500px;
 			height:780px;
@@ -14,9 +23,9 @@
 			padding-top:40px;
 			padding-left:50px;
 		}
-		.header .iphone{
-			float: right;
-		
+		/* 没加上 */
+		.header .img h3::before{
+			background: url(../../image/images/login_sprites.png) 0 0 no-repeat;
 		}
 		.header .download{
 			text-decoration:none;
@@ -32,6 +41,7 @@
 			height:588px;
 			padding-bottom:62px;
 			background:#e9f2fb;
+			box-sizing: border-box;
 		}
 		.container .img{
 			padding-left:150px;
@@ -57,7 +67,7 @@
 			display: flex;
 			flex-flow: row nowrap;
 			justify-content: center;
-			align-items: center;			
+			align-items: center;	
 		}
 		.login-content-btns>.item.on{
 			color:#e51f1d;;
@@ -87,13 +97,16 @@
 			width:100%;
 			display: flex;
 			flex-flow: row nowrap;
-			transition: transform .5s linear .5s;
+			transition: transform .5s;
 		}
-		.login-content-view .item{
-			width:100%;
-			height:50px;			
+		.login-content-mode.old{
+		    transform: translateX(-112%);
+		}
+		.login-content-mode>.item{
+			width:100%;			
 			padding: 0 4%;
 			display: flex;
+			flex: none;
 			flex-flow: column nowrap;
 		}
 		.login-content-inputBox.username{
@@ -105,73 +118,202 @@
 			position: relative;
 			margin-bottom: 30px;
 		}
-		/* 写到这里 */
+		.login-content-inputBox.username::before{
+			background-position: -38px -256px;
+		}
+		.login-content-inputBox::before{
+			content: "";
+			background-image: url(../../image/images/login_sprites.png);
+			background-repeat: no-repeat;
+			width: 18px;
+			height: 18px;
+			position: absolute;
+			left: 11px;
+			top: 11px;
+		}
+		.login-content-inputBox.username>input[type=text]{
+			flex: auto;
+			border-right: none;
+		}
+		.login-content-inputBox.username>input[type=button]{
+			flex: none;
+			width: 35%;
+			height: 42px;
+			padding-left: 0;
+			background-color: #eee;
+			color: #000;
+			font-weight: 700;
+			cursor: pointer;
+		}
+		.login-content-inputBox.SMSCode::before{
+			background-position: 0 -256px;
+		}
+		.login-content-inputBox.SMSCode>input{
+			width: 100%;
+		}
+		.login-content-inputBox-msg{
+			position: absolute;
+			left: 5px;
+			top: 40px;
+			padding-left: 15px;
+			height: 24px;
+			line-height: 24px;
+			font-size: 12px;
+		}
+		.login-content-inputBox-msg::before{
+			display: block;
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 7px;
+			width: 14px;
+			height: 14px;
+			background: url(../../image/images/login_sprites.png) -1000px -33px no-repeat;
+		}
+		.login-content-inputBox.submit>input{
+			padding-left: 0;
+			width: 100%;
+			border: none;
+			border-radius: 4px;
+			background-color: #e51f1d;
+			color: #fff;
+			cursor: pointer;
+		}
+		.login-content-agreement{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			align-self: center;
+			font-size: 12px;
+			color: #666;
+			margin-bottom: 60px;
+		}
+		.login-content-agreement>input:checked{
+			background: url(../../image/images/checked.png) center no-repeat;
+		}
+		.login-content-agreement>input{
+			padding: 0;
+			widows: 16px;
+			height: 16px;
+			margin-right: 5px;
+			border: 1px solid #c9c9c6;
+			outline: 0;
+		}
+		.login-content-agreement a{
+			color: #5695e2;
+		}
+		.login-content-inputBox.other::before{
+			background-position: -38px -256px;
+		}
+		.login-content-inputBox.other>input,.login-content-inputBox.password>input{
+			width:100%;
+			flex: auto;
+		}
+		.login-content-inputBox.password::before{
+			background-position: -84px -256px;
+		}
+		.login-content-inputBox.submit>input{
+			padding-left: 0;
+			width:100%;
+			border: none;
+			border-radius: 4px;
+			background-color: #e51f1d;
+			color: #fff;
+			cursor: pointer;
+		}
+		.login-content-forget{
+			width:100%;
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: flex-end;
+			font-size: 14px;
+			transform: translateY(-10px);
+			margin-bottom: 10px;
+		}
 
 
-		#upwd{
-			margin-top:20px;
-		}
-		.btn{
-			width:305px;
-			height:40px;
-			margin-top:20px;
-			background:red;
-			color:#fff;
-			line-height:40px;
-			border-radius:1px;
-			border:none;
-		}
-		.forget a{
-			padding-top:20px;
-			text-decoration:none;
-			float:right;
-			color:#000;
-			font-size:14px;
-		}
 		.login-other{
-			width:340px;
-			height:160px;
+			width:100%;
 			box-sizing:border-box;
 			margin:50px 30px;
-			padding:40px 30px;
-			background-color:#fff;
-			float:left;
+			padding:0 4.3%;
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: center;	
+		}
+		.login-other .headline{
+			width: 100%;
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: center;
+			align-items: center;
+			color: #666;
+			margin-bottom: 15px;
+		}
+		.login-other .headline::after,.login-other .headline::before{
+			flex: auto;
+			content: "";
+			display: block;
+			height: 1px;
+			background-color: #666;
 		}
 		.login-other .headline p{
-			width:140px;
-			height:25px;
-			margin:20px;
-			padding-left:23px;
-			line-height:25px;
-			font-size:13px ;
-			color:#666;
+			margin:0 15px;
+			letter-spacing: 2px;
 		}
-		ul{
-			list-style:none;
-			font-size:5px;
-			color:#666;
-			float:left;
+		.login-other .headline p::after{
+			content: "";
+			display: block;
+			background: url(../../image/images/login_sprites.png) no-repeat;
+			position: absolute;
 		}
-		.three{
-			width:200px;
-			height:30px;
-            margin:20px;
-			padding-left:23px;
-			line-height:30px;
-			font-size:13px ;
-			color:#666;
-			float:left;
+
+		.login-other .three ul{
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: center;
+			align-items: center;
 		}
-		li{
-			float:left;
+		.login-other .three ul li{
+			margin: 10px 20px 0;
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: center;
+			align-items: center;
+			cursor: pointer;
 		}
-		.wechat{
-			width:80px;
-			margin-left:-30px;
+		.login-other .three ul li span{
+			width: 37px;
+			height: 37px;
+			display: block;
+			background: url(../../image/images/login_sprites.png) no-repeat;
 		}
-		.weibo{
-			width:80px;
+		.login-other .three ul li.wechat span{
+			background-position: 0 -68px;
 		}
-		.qq{
-			width:50px;
+		.login-other .three ul li.weibo span{
+			background-position: -75px -68px;
+		}
+		.login-other .three ul li.qq span{
+			background-position: -150px -68px;
+		}
+		.login-other .three ul li p{
+			height: 12px;
+			line-height: 12px;
+			text-align: center;
+			color: #666;
+			margin-top: 4px;
+		}
+		.login-other .three ul li.wechat p{
+			position: relative;
+		}
+		.login-other .three ul li.wechat p::after{
+			content: "";
+			display: block;
+			width:22px;
+			height: 22px;
+			background: url(../../image/images/login_sprites.png) 0 -43px no-repeat;
+			position: absolute;
+			top: 1px;
+			left: 28px;
 		}
