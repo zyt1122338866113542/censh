@@ -1,3 +1,8 @@
+.color{
+    background: pink;
+}
+
+
 main{
     width:1200px;
     margin:0 auto;
@@ -210,14 +215,17 @@ main .core{
     width: 0;
     height:0;
     border-left: 8px solid transparent;
-    border-right: 8 solid transparent;
+    border-right: 8px solid transparent;
     border-top: 6px solid #e51f1d;
     position: absolute;
     left: 50%;
     margin-left: -8px;
 }
-.hot .content ol:hover li.active{
+.hot .content ol li.active{
     background: #e51f1d;
+}
+.hot .content ol li.active i{
+    display: block
 }
 .hot .content ul{
     display: none;
@@ -566,7 +574,7 @@ main .core{
 .rank .content .tab{
     margin-bottom: 20px;
 }
-.rank .content .tab span.active{
+.rank .content .tab  span.active{
     background: #b7a46c;
     color: #ffffff;
 }
@@ -581,6 +589,20 @@ main .core{
     margin-right: 6px;
     cursor: pointer;
     position: relative;  
+}
+.rank .content .tab span i{
+    display: none;
+    width: 0;
+    height:0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 5px solid #b7a46c;
+    position: absolute;
+    left: 50%;
+    margin-left: -6px;
+}
+.rank .content .tab span.active i{
+    display: block;
 }
 .rank .content ul li{
     margin-bottom: 12px;
