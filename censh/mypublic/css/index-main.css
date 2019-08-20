@@ -227,9 +227,6 @@ main .core{
 .hot .content ol li.active i{
     display: block
 }
-.hot .content ul{
-    display: none;
-}
 .hot .content  ul.active{
     display: block;
 }
