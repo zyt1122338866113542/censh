@@ -227,6 +227,9 @@ main .core{
 .hot .content ol li.active i{
     display: block
 }
+.hot .content  ul{
+    display: none;
+}
 .hot .content  ul.active{
     display: block;
 }
@@ -390,14 +393,27 @@ main .core{
     font-size: 16px;
     color: #999;
 }
+.store .container .core>a.actived{
+    color: #000;
+    font-weight: 700;
+    border-bottom: 1px solid #221815;
+}
 .store .container .core ul{
+   display: none;
+
+}
+.store .container .core ul.active{
     text-align: left;
     margin-top: 40px;
+    display: block;
 }
 .store .container .core ul li{
     border: 1px solid #cdcbca;
     border-radius: 5px;
     background-color:#fff;
+    float: left;
+    width: 23%;
+    margin-left:18px;
 }
 .store .container .core ul li:hover{
     border: 2px solid #be460a;
@@ -599,6 +615,12 @@ main .core{
     margin-left: -6px;
 }
 .rank .content .tab span.active i{
+    display: block;
+}
+.rank .content .list ul{
+    display: none;
+}
+.rank .content .list ul.active{
     display: block;
 }
 .rank .content ul li{
