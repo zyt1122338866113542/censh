@@ -1,5 +1,7 @@
 .col-main{
-width:1200px;
+    width:1200px;
+    margin: 0 auto;
+    box-sizing:border-box;	
 }
 main section.breadcrumbs{
     padding: 20px 0;
@@ -104,4 +106,193 @@ main section.summary .summary-news ul li a{
     line-height: 2;
     font-size: 12px;
     color: #747474;
+}
+main section.summary .summary-detail{
+    width:47%;
+    padding-left: 5%;
+}
+main section.summary .summary-detail .title .title-brand{
+    position: relative;
+}
+main section.summary .summary-detail .title .title-brand img{
+    display: inline-block;
+    width: 75px;
+    vertical-align: middle;
+}
+main section.summary .summary-detail .title .title-brand span{
+    margin-left: 10px;
+    font-size: 16px;
+    color: #494949;
+}
+/*  图片不对*/
+main section.summary .summary-detail .title .title-brand i.share{
+    background: url(../../image/images/arrdown.png) no-repeat;
+    margin-right: 20px;
+}
+main section.summary .summary-detail .title .title-brand i{
+    width: 60px;
+    height: 20px;
+    background-size: 20px 20px;
+    cursor: pointer;
+    margin-top: 5px;
+    position: relative;
+}
+.bdshare-button-style0-16{
+    zoom: 1;
+}
+.bdshare-button-style0-16 a.bds_more{
+    background-image: none;
+}
+.bdshare-button-style0-16 .bds_more{
+    color: #333;
+    float: left;
+}
+.bdshare-button-style0-16 a,.bdshare-button-style0-16 .bds_more{
+    font-size: 12px;
+    padding-left: 17px;
+    line-height: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    margin: 6px 6px 6px 0;
+}
+.bdshare-button-style0-16 .bds_more{
+    background-position: 0 0;
+}
+.bdshare-button-style0-16::after{
+    content: "";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+/* 图片不对 */
+main section.summary .summary-detail .title .title-brand i.collection{
+    background: url(../../image/images/arrdown.png) no-repeat;
+    margin-right:20px; 
+}
+main section.summary .summary-detail .title .title-name{
+    padding-top: 10px;
+    border-bottom: 1px solid #d2d2d2;
+}
+main section.summary .summary-detail .title .title-name h1{
+    font-size: 20px;
+    color: #222;
+    line-height: 36px;
+    font-weight: 400;
+}
+main section.summary .summary-detail .title .title-name span{
+    font-size: 14px;
+    color: #e51f1d;
+    line-height: 36px;
+}
+main section.summary .summary-detail .content{
+    padding-top: 10px;
+    border-bottom: 1px solid #d2d2d2;
+}
+main section.summary .summary-detail .content .price-row{
+    position: relative;
+    margin-bottom: 10px;
+}
+main section.summary .summary-detail .content p{
+    font-size: 14px;
+    line-height: 40px;
+}
+main section.summary .summary-detail .content .price-row p .red{
+    font-size: 20px;
+    font-weight: 900;
+    color: #e51f1d;
+}
+main section.summary .summary-detail .content .price-row p .pre-money{
+    margin:0 5px 0 50px;
+    font-size: 16px;
+    color: #333;
+}
+main section.summary .summary-detail .content .price-row .erwercode{
+    position: absolute;
+    top: 10px;
+    right: 38px;
+}
+main section.summary .summary-detail .content .price-row .erwercode span{
+    font-size: 14px;
+    color:#bda377;
+    cursor: pointer;
+}
+main section.summary .summary-detail .content .price-row .erwercode .pic{
+    display: none;
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 0 10px #d2d2d2;
+    padding: 10px;
+    position: absolute;
+    top:-130px;
+    right: -36px;
+}
+main section.summary .summary-detail .content .channel{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+main section.summary .summary-detail .content .channel>.name{
+    font-size: 14px;
+    line-height: 1.2;
+    margin-right: 20px;
+    flex: none;
+}
+main section.summary .summary-detail .content .channel>.name::after{
+    content: ":";
+    display: inline-block;
+    padding-left: 6px;
+}
+main section.summary .summary-detail .content .channel>.btns{
+    flex: none;
+    display: flex;
+    flex-flow: row nowrap;
+}
+main section.summary .summary-detail .content .channel>.btns>.item.on{
+    border: 3px solid #e51f1d;
+    pointer-events: none;
+}
+main section.summary .summary-detail .content .channel>.btns>.item{
+    flex: none;
+    padding: 10px 15px;
+    margin-right: 8px;
+    font-size: 14px;
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main section.summary .summary-detail .content>.getPointTips{
+    width: 260px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 20px;
+    position: relative;
+    z-index: 100;
+}
+main section.summary .summary-detail .content>.getPointTips{
+    cursor: pointer;
+}
+main section.summary .summary-detail .content>.getPointTips>.tips{
+    position: absolute;
+    top:-150px;
+    left: 200px;
+    display: none;
+    background-color: #fff;
+    box-shadow: 0 0 5px #ddd;
+    padding: 10px;
+}
+main section.summary .summary-detail .content>.getPointTips>.tips>p{
+    text-align: center;
+    margin-bottom: 10px;
+}
+main section.summary .summary-detail .content>.getPointTips>.tips>p span{
+    font-weight: 700;
+    font-size: 16px;
+}
+main section.summary .summary-detail .content>.getPointTips>.tips>p>.red{
+    color: #e51f1d;
 }
