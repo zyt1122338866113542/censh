@@ -38,12 +38,47 @@
 		<header id="header"></header>
 		<div class="col-main">
 			<main>
-				<section class="banner">
+				<section class="banner" id="banner">
+					<div id="btn-left"></div>
 					<div class="swiper-container-lunbotu">
-						<div class="swiper-wrapper">
-							<img src="../../image/index/5d1afe6a48de6.jpg" alt=""  >
-						</div>
+						<ul id="ul-imgs" class="swiper-wrapper" style="width:6000px; margin-left: 0px;">
+							<!-- 修改轮播 -->
+							<li>
+								<a href="javascript:;">
+									<img src="../../image/index/5d1afe6a48de6.jpg" alt=""  >
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../../image/index/5d03600ad801d.jpg" alt=""  >
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../../image/index/5d1afe6a48de6.jpg" alt=""  >
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="../../image/index/5d1afe6a48de6.jpg" alt=""  >
+								</a>
+							</li>
+
+							<li>
+								<a href="javascript:;">
+									<img src="../../image/index/5d1afe6a48de6.jpg" alt=""  >
+								</a>
+							</li>	
+						</ul>
+						<ul id="ul-idxs" class="swiper-swapper-idxs">
+							<!--虽然li个数比实际图片张数多1，但小圆点的个数不必多1-->
+							<li class="active"></li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
 					</div>
+					<div id="btn-right"></div>
 					<div class="small-banner .core">
 						<ul>
 							<li>
@@ -158,7 +193,7 @@
 								<i></i>
 							</li>
 						</ol>
-						 <div> 
+						 <div id="ul-one"> 
 							<ul id="u11" class="tab1  clearfix active">
 							<li>
 								<a href="#">
@@ -1132,6 +1167,7 @@
 	</div>
 	<script src="../js/jquery-1.11.3.js"></script>
 	<script src="../js/header.js"></script>
+	<script src="../js/index_cursouse.js"></script>
 	<script src="../js/index.js"></script>
 	<script src="../js/footer.js"></script>
 </body>

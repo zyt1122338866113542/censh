@@ -1,5 +1,5 @@
 $(function(){
-    //hot的tab切换
+
     $("[data-toggle=tab]").mouseenter(function(){
         var i=parseInt($(this).attr("data-index"));
         //给每一个li加点击效果

@@ -5,28 +5,9 @@
 	<title>Document</title>
 	<link rel="stylesheet" href="../css/common.css">
 	<link rel="stylesheet" href="../css/login.css">
-	<script>
-		function login(){
-			var $uname=uname.value;
-			var $upwd=upwd.value;
-			var xhr=new XMLHttpRequest();
-			xhr.onreadystatechange=function(){
-				if(xhr.readyState==4 && xhr.status==200){
-					var result=xhr.responseText;
-					if(result=="1"){
-						alert("登录成功")
-					}else if(result=="0"){
-						alert("用户名或者密码错误")
-					}else{
-						alert("查不到此用户")
-					}
-				}
-			};
-			xhr.open("get","/user/v1/login/"+$uname+"&"+$upwd,true);
-			xhr.send();
-			
-		}
-	</script> 
+	<script src="../js/js/vue.js"></script>
+	<script src="../js/js/axios.min.js"></script>
+	<script src="../js/js/qs.min.js"></script>
 </head>
 <body>
 	<div class="full">
@@ -42,7 +23,7 @@
 			<div class="img">
 				<img src="../../image/login/login_bg.jpg" alt="" class="login_bg">
 			</div>
-			<div class="login-content">
+			<div class="login-content" id="loginContent">
 				<div class="login-content-btns">
 					<div class="item on" id="newLogin">手机号登录</div>
 					<div class="item" id="oldLogin">账号登录</div>
@@ -73,15 +54,15 @@
 						</div>
 						<div class="item hide">
 							<div class="login-content-inputBox other">
-								<input type="text" name="old_name" placeholder="请输入手机号"  id="uname" maxlength="11">
+								<input type="text" name="old_name" placeholder="请输入手机号"  id="uname" maxlength="11" v-model="uname">
 								<div class="login-content-inputBox-msg"></div>
 							</div>
 							<div class="login-content-inputBox password">
-								<input type="password" name="old_pwd" value=""  placeholder="请输入密码"  id="upwd" maxlength="6">
+								<input type="password" name="old_pwd" value=""  placeholder="请输入密码"  id="upwd" maxlength="6" v-model="upwd">
 								<div class="login-content-inputBox-msg"></div>
 							</div>
 							<div class="login-content-inputBox submit">
-								<input type="button" id="osubmit" value="登录">
+								<input type="button" id="osubmit" value="登录" @click="login">
 							</div>
 							<div class="login-content-forget">
 								<a href="">忘记密码?</a>
@@ -107,11 +88,40 @@
 								</li>
 							</ul>
 						</div>						
-					</div>
-				</div> 						
-			</div>
+				</div>
+			</div> 						
+		</div>
 	</div>
+	<script>
+		var vm=new Vue({
+			el:"#loginContent",
+			data:{
+				uname:"",
+				upwd:""
+			},methods: {
+				login(){
+					axios.post(
+						"http://localhost:3003",
+						Qs.stringify({
+							uname:this.uname,
+							upwd:this.upwd
+						})
+					).then(result=>{
+						if(result.data.code==1){
+							alert("登录成功");
+						}
+						else{
+							alert("登录失败");
+						}
+						this.uname="";
+						this.upwd="";
+					})
+				}
+			},
+		})
+	</script>
 	<script src="../js/jquery-1.11.3.js"></script>
 	<script src="../js/login.js"></script>
+	
 </body>
 </html>
