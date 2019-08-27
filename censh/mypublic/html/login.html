@@ -107,7 +107,10 @@
 							upwd:this.upwd
 						})
 					).then(result=>{
-						if(result.data.code==1){
+						// 补：正则
+						var reg=/^[A-Za-z0-9]$/i;
+						
+						if(result.data.code==1 && reg.test(uname) && reg.test(upwd)){
 							alert("登录成功");
 						}
 						else{

@@ -23,8 +23,102 @@
                 </ul>
             </section>
             <section class="checkout-progress">
-                <ul class=""></ul>
+                <ul class="checkout-steps clearer">
+                    <li class="step active">
+                        <div class="step-number">
+                            <span>01</span>
+                        </div>
+                        <div class="label">我的购物车</div>
+                    </li>
+                    <li class="step">
+                        <div class="step-number">
+                            <span>02</span>
+                        </div>
+                        <div class="label">填写核对订单信息</div>
+                    </li>
+                    <li class="step">
+                        <div class="step-number">
+                            <span>03</span>
+                        </div>
+                        <div class="label">成功提交订单</div>
+                    </li>
+                    <li class="step">
+                        <div class="step-number">
+                            <span>04</span>
+                        </div>
+                        <div class="label">订单支付完成</div>
+                    </li>
+                </ul>
             </section>
+            <section class="cart-content">
+                <ul class="section-header">
+                    <li class="field-checkbox">间距</li>
+                    <li class="field-product">产品</li>
+                    <li class="field-price">价格</li>
+                    <li class="field-qty">数量</li>
+                    <li class="field-sum">小计</li>
+                    <li class="field-action">操作</li>
+                </ul>
+                <form action="/checkout/onepage" id="checkout-cart-form" method="post">
+                    <input type="hidden" value="1" id="checknum">
+                    <div class="checkout-body" id="section-subscipion-1" carttype="1">
+                        <div class="cart-type">
+                            <span>盛时自营</span>
+                        </div>
+                        <ul class="product-list ">
+                            <li class="field-checkbox">
+                                <input type="checkbox" name="item_id[]" value="16447">
+                            </li>
+                            <li class="field-product">
+                                <a href="" class="product-img">
+                                    <img style="width: 80px;" src="../../image/card/4ed50519805a441b9f664b6466cdeaafX320.jpg" alt="">
+                                </a>
+                                <div class="col-right">
+                                    <a href="" class="product-name">
+                                        <span>盛时定时 CENSH CSW00004M-CS 石英 男款手表</span>
+                                    </a>
+                                    <p class="sku">CSW00004M-CS</p>
+                                </div>
+                            </li> 
+                            <li class="field-price">
+                                <p class="price">
+                                    <span class="final-price">￥&nbsp;1499</span>
+                                    <span>
+                                        <del>￥&nbsp;1950</del>
+                                    </span>
+                                    <input type="hidden" name="field-price" value="1499">
+                                </p>
+                            </li>
+                            <li class="field-qty">
+                                <div class="qty-box">
+                                    <span class="qty-minus">-</span>
+                                    <input type="text" value="1" max="5" maxlength="4">
+                                    <span class="qty-plus">+</span>
+                                </div>
+                            </li>
+                            <li class="field-sum">
+                                <span class="item-subtotal" data-price="1499">
+                                    <span class="price">￥2,998</span>
+                                </span>
+                            </li>
+                            <li class="field-action">
+                                <button class="cart-item-delete" type="button"> 删除</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="cart-footer"></div>
+                    <div class="dialog-tips"></div>
+                </form>
+            </section>
+            <div class="cartfooter">
+                <div class="tip">
+                    <img src="../../image/images/checked.png" alt="">结算前请勾选商品
+                </div>
+                <input type="hidden" name="cart_type" value="1">
+            </div>
+            <a href="javascript:;" class="continue-shopping left">继续浏览购物</a>
+            <button type="submit" class="disable_btn right active">立即结算</button>
+            <!-- 写到这里 -->
         </main>
     </div>
     <footer id="footer"></footer>

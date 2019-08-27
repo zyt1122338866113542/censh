@@ -1,9 +1,148 @@
 .col-main{
     position: relative;
+    width:1200px;
+    margin: 0 auto;
+    box-sizing:border-box;
 }
-main section.breadcrumbs{
+section.breadcrumbs{
     padding: 20px 0;
 }
-main section.breadcrumbs ul li{
+section.breadcrumbs ul li{
     float: left;
+}
+section .checkout-steps{
+    margin-bottom: 40px;
+}
+section .checkout-steps li.step{
+    float: left;
+    width:25%;
+    padding: 20px 0 0;
+    position: relative;
+    text-align: center;
+}
+section .checkout-steps li.step.active .step-number{
+ border-top: 5px solid #e51f1d;
+}
+section .checkout-steps li.step .step-number{
+    position: relative;
+    color: #fff;
+    border-top: 5px solid #c4c4c4;
+}
+section .checkout-steps li.step.active .step-number span{
+    background: #e51f1d;
+}
+section .checkout-steps li.step .step-number span{
+    position: absolute;
+    left: 50%;
+    top: -17px;
+    margin-left: -14px;
+    display: block;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    border-radius: 14px;
+    background: #c4c4c4;
+}
+section .checkout-steps li.step.active .label{
+    color: #e51f1d;
+}
+section .checkout-steps li.step .label{
+    margin-top: 25px;
+    font-size: 15px;
+    font-weight: bold;
+}
+section.cart-content .section-header{
+    height: 50px;
+    line-height: 50px;
+    background: #eee;
+    padding: 0 12px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.cart-content input{
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+.checkout-body{
+    margin-bottom: 30px;
+}
+.checkout-body .cart-type{
+    height: 50px;
+    line-height: 50px;
+    margin: 15px 0;
+    border-left: 2px solid #bda377;
+    color: #000;
+    font-size: 16px;
+    padding-left: 10px;
+}
+.checkout-body .product-list{
+    padding: 23px 12px;
+    border-bottom: 1px solid #d2d2d2;
+    background: #fcfcfc;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.checkout-body .product-list:last-child{
+    border: none;
+}
+.checkout-body .product-list li.field-product .product-img{
+    border: 1px solid #d6d6d6;
+} 
+.checkout-body .product-list li.field-product .product-name{
+    line-height: 22px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: normal;
+    color: #212121;
+    text-align: left;
+}
+.checkout-body .product-list li.field-product .sku{
+    line-height: 22px;
+    color: #212121;
+    font-size: 14px;
+    text-align: left;
+}
+.checkout-body .product-list li.field-price .price{
+    color: #212121;
+}
+.checkout-body .product-list li.field-price .price span{
+    line-height: 22px;
+    display: block;
+}
+.checkout-body .product-list li.field-pice .final-price{
+    color: #e51f1d;
+    padding: 19px 0 0 ;
+}
+.checkout-body .product-list li.field-qty .qty-box{
+    background: url(../../image/);
+    width: 95px;
+    height: 20px;
+    margin: 31px auto;
+    line-height: 20px;
+}
+.checkout-body .product-list li.field-qty .qty-box span{
+    text-indent: -9999px;
+    cursor: pointer;
+}
+.checkout-body .product-list li.field-qty .qty-box input{
+    padding: 1px 0;
+    text-align: center;
+    background: transparent;
+    cursor: default;
+}
+.checkout-body .product-list li.field-sum .price{
+    color: #e51f1d;
+}
+.checkout-body .product-list li.field-action{
+    text-align: right;
+}
+.checkout-body .product-list li.field-action .cart-item-delete{
+    cursor: pointer;
+    background: #fff;
+    border: 1px solid #d6d6d6;
 }

@@ -6,6 +6,7 @@ $(function(){
         $(this).parent()
         //li
         .addClass("active").siblings().removeClass("active");
+        $(`#img${i}`).addClass("active").parent().siblings().children("img").removeClass("active");
         //给对应的下标设置是否显示
         $(`#u${i}`).addClass("active").siblings().removeClass("active");
     })

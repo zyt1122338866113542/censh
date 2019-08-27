@@ -17,6 +17,7 @@ body{
 	display: block;
 	height: 0;
 	clear: both;
+	visibility: hidden;
 }
 input{
 	font-family: "Microsoft YaHei";
@@ -69,4 +70,13 @@ em,i{
 h1,h2,h3,h4,h5,h6,p{
 	margin: 0;
 	padding: 0;
+}
+.clearer:after,.fields:after{
+	display: block;
+	content: ".";
+	clear: both;
+	overflow: hidden;
+	height: 0;
+	line-height: 0;
+	font-size: 0;
 }

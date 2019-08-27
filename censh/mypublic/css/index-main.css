@@ -38,26 +38,29 @@ main .core{
     overflow: hidden;
     position: relative;
 }
+
 .banner #btn-left,#btn-right{
     width:60px;
     height:512px;
     position:absolute;
-    top:0;
+    top:45px;
     background-repeat:no-repeat;
     background-position:center;
     cursor:pointer;
   }
 .banner #btn-left{
-    left:20px;
+    left:2px;
     background-image:url(../../image/index/left_ar.png);
   }
 .banner #btn-right{
-    right:20px;
+    right:2px;
     background-image:url(../../image/index/right_ar.png);
   }
 .banner #btn-left:hover,#btn-right:hover{
     background-size:40px 70px
   }
+ 
+
 .banner .swiper-container-lunbotu ul.transition{
     transition: all .5s linear;
 }
