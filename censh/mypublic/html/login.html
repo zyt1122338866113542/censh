@@ -55,10 +55,13 @@
 						<div class="item hide">
 							<div class="login-content-inputBox other">
 								<input type="text" name="old_name" placeholder="请输入手机号"  id="uname" maxlength="11" v-model="uname">
+								<span></span>
 								<div class="login-content-inputBox-msg"></div>
 							</div>
 							<div class="login-content-inputBox password">
 								<input type="password" name="old_pwd" value=""  placeholder="请输入密码"  id="upwd" maxlength="6" v-model="upwd">
+								
+								<span></span>
 								<div class="login-content-inputBox-msg"></div>
 							</div>
 							<div class="login-content-inputBox submit">
@@ -108,13 +111,14 @@
 						})
 					).then(result=>{
 						// 补：正则
-						var reg=/^[A-Za-z0-9]$/i;
-						
-						if(result.data.code==1 && reg.test(uname) && reg.test(upwd)){
-							alert("登录成功");
+						var reg=/^[A-Za-z0-9]{3,12}$/i;
+						if(result.data.code==1 && reg.test(this.uname) && reg.test(this.upwd)){
+							alert("成功")
+							console.log(222);
 						}
 						else{
-							alert("登录失败");
+							alert("失败")
+							console.log(333);
 						}
 						this.uname="";
 						this.upwd="";
