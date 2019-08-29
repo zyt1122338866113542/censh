@@ -106,24 +106,38 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="cart-footer"></div>
-                    <div class="dialog-tips"></div>
+                    <div class="cart-footer">
+                        <div class="tip">
+                            <img src="../../image/images/checked.png" alt="">结算前请勾选商品
+                        </div>
+                        <input type="hidden" name="cart_type" value="1">
+                        <a href="javascript:;" class="delete-checked-items left">
+                            <i></i>
+                            删除选中商品
+                        </a>
+                        <a href="javascript:;" class="continue-shopping left">继续浏览购物</a>
+                        <button type="submit" class="disabled_btn right active">立即结算</button>
+                        <span class="subtotal right amount-total">合计
+                            <span class="num checked-amoubt">￥1,499</span>元
+                        </span>
+                        <span class="subtotal right">已选商品
+                            <span class="num checked-count">1</span>款
+                        </span>
+                    </div>
+                    <div class="dialog-tips">
+                        <p></p>
+                    </div>
                 </form>
             </section>
-            <div class="cartfooter">
-                <div class="tip">
-                    <img src="../../image/images/checked.png" alt="">结算前请勾选商品
-                </div>
-                <input type="hidden" name="cart_type" value="1">
-            </div>
-            <a href="javascript:;" class="continue-shopping left">继续浏览购物</a>
-            <button type="submit" class="disable_btn right active">立即结算</button>
-            <!-- 写到这里 -->
+            
+           
         </main>
     </div>
     <footer id="footer"></footer>
     <script src="../js/jquery-1.11.3.js"></script>
     <script src="../js/header.js"></script>
-	<script src="../js/footer.js"></script>
+    <script src="../js/card.js"></script>
+    <script src="../js/footer.js"></script>
 </body>
 </html>
+

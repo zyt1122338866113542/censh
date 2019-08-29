@@ -146,3 +146,62 @@ section.cart-content .section-header{
     background: #fff;
     border: 1px solid #d6d6d6;
 }
+.cart-footer{
+    height: 50px;
+    line-height: 50px;
+    background: #eee;
+    color: #343434;
+    position: relative;
+}
+.cart-footer>.tip{
+    position: absolute;
+    top: -23px;
+    right: 0;
+    color: #e51f1d;
+    line-height: 20px;
+}
+.cart-footer>.tip img{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: top;
+    margin-right: 4px;
+}
+.cart-footer .delete-checked-items{
+    margin: 0 12px 0 25px;
+    /* 图片不对 */
+    background: url(../../image/images/arrdown.png) left no-repeat;
+    background-size: 14px 14px;
+    padding-left: 18px;
+    display: inline-block;
+    color: #212121;
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+.cart-footer .continue-shopping{
+    color: #0aa2e4;
+}
+.cart-footer .disabled_btn.active{
+    background: #e51f1d;
+    cursor: pointer;
+}
+.cart-footer .disabled_btn{
+    width: 125px;
+    height: 50px;
+    line-height: 50px;
+    border: none;
+    color: #fff;
+    background: #ccc;
+    font-size: 14px;
+}
+.cart-footer .subtotal{
+    margin-right: 30px;
+}
+.cart-footer .num{
+    color: #e51f1d;
+    font-size: 18px;
+}

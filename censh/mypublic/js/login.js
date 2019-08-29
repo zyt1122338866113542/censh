@@ -17,7 +17,7 @@ $(function(){
         .addClass("login-content-mode old")
     })
     //表单验证
-    var resName=false,resPwd=false;
+    // var resName=false,resPwd=false;
     var $utxt=$(":text");
     var $upwd=$(":password");
     $utxt.blur(function(){
