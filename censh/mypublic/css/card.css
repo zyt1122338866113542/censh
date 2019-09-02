@@ -1,3 +1,7 @@
+
+.fale{
+   visibility: hidden;
+}
 .col-main{
     position: relative;
     width:1200px;

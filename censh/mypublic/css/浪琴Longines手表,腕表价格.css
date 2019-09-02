@@ -1,3 +1,9 @@
+.show{
+    display: block;
+}
+.hide{
+    display: none;
+}
 .col-main{
     width:1200px;
     margin:0 auto;
@@ -242,9 +248,6 @@ main section.product-nav .product-nav-right .total-red{
     font-weight: 700;
     padding: 0 5px;
 }
-/* main section.product-list{
-    margin-top: 32px;
-} */
 main section.product-list ul{
     padding-left: 0;
     margin-top: 0;
@@ -358,9 +361,11 @@ main section.page-control .page-box{
 main section.page-control .page-box ol{
     float: left;
 }
+main section.page-control .page-box ol li.disable{
+    background: #9d9e9f;
+}
 main section.page-control .page-box ol li{
     font-size: 12px;
-
     line-height: 24px;
     padding: 0 2px;
     border: 1px solid #ededed;
@@ -377,7 +382,7 @@ main section.page-control .page-box li a{
     text-decoration: none;
 }
 main section.page-control .page-box li.current{
-    background: #4b4b4b;
+    background:red;
     min-width: 23px;
 }
 main section.page-control .page-box li.current a{
@@ -446,7 +451,7 @@ main section.page-control .page-box .page-num button{
     border-bottom: none;
 }
  section.seo_ranking .group .tabs .item.on{
-    background: #fff;
+    background: steelblue;
     pointer-events: none;
 }
  section.seo_ranking .group .tabs .item{
@@ -468,6 +473,7 @@ main section.page-control .page-box .page-num button{
  section.seo_ranking .group .lists ul{
     width: 100%;
     padding: 0;
+    display: none;
 }
  section.seo_ranking .group .lists ul.on{
     display: block;
