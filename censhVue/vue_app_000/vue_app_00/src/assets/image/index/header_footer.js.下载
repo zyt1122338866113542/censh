@@ -1,0 +1,236 @@
+$(function () {
+    //search bar
+    $('.search>.select>ul>li').on('click', function(){
+        this.parentElement.previousElementSibling.innerText = this.innerText;
+        if(this.dataset.type === 'product'){
+            $('form.product').addClass('on');
+            $('form.store').removeClass('on');
+        }else if(this.dataset.type === 'store'){
+            $('form.product').removeClass('on');
+            $('form.store').addClass('on');
+        }
+    });
+
+    /*function searchOption(dom) {
+        $(".search-" + dom).on("click", function () {
+            $(this).addClass("active").siblings().removeClass("active");
+            $(".search-content > ." + dom).show().siblings().hide();
+        })
+    }
+
+    searchOption("product");
+    searchOption("stroes");*/
+
+    /*搜索框输入提示*/
+    var searchBox = $('.search-box');
+    var ajaxTimer = null;
+    var delay = 500; // 单位ms
+
+    window.setTimeout(function () {
+        searchBox.autocomplete({
+            source: function (request, response) {
+                // 输入结束才发送请求
+                if (ajaxTimer) {
+                    window.clearTimeout(ajaxTimer);
+                }
+
+                ajaxTimer = window.setTimeout(function () {
+                    // 只有input有值才发送请求
+                    searchBox.val() !== '' && $.ajax({
+                        url: baseUrl + 'product/searchsuggest?search_type=' + searchType,
+                        xhrFields: {
+                            withCredentials: true
+                        },
+                        dataType: 'json',
+                        data: {
+                            query: searchBox.val()
+                        },
+                        success: function (data) {
+                            if (!data.length) {
+                                $(".search-tip").hide();
+                                return false;
+                            }
+                            var html = "";
+                            for (var i = 0; i < data.length; i++) {
+                                var rhtml = "";
+                                for (var j = 0; j < data[i].sub_suggest.length; j++) {
+                                    rhtml += '<span class="minor">' + data[i].sub_suggest[j] + '</span>';
+                                }
+                                html += '<li><span class="major" data-plink="' + data[i].plink + '">' + data[i].suggest + '</span><div class="fr">' + rhtml + '</div></li>';
+                            }
+                            $(".search-tip").html(html).show();
+
+                            //点击提示结果
+                            $(".search-tip > li").on("click", function (e) {
+                                if (e.target.className == "minor") {
+                                    var l = $(this).find("span.major").html();
+                                    var r = e.target.innerText;
+                                    searchBox.val(l + " " + r);
+                                } else {
+                                    var sr = $(this).find("span.major").html();
+                                    searchBox.val(sr);
+                                }
+                                if (searchType == 'jifen') {
+                                    window.location.href = $(this).find("span.major").data('plink');
+                                } else {
+                                    var searchContent = searchBox.val();
+                                    window.location.href = searchUrl + "?query=" + searchContent;
+                                }
+                            })
+                            $(document).on("click", function () {
+                                $(".search-tip").hide();
+                            })
+                        }
+                    });
+                }, delay);
+            }
+        }).bind('input.autocomplete', function () {
+            // 修复Firefox不支持中文
+            searchBox.autocomplete('search', searchBox.val());
+        }).focus();
+    }, 0);
+
+    $('#search').on("click", function () {
+        var searchContent = $('.search-box').val();
+        if (searchContent) {
+            point_search(searchContent);
+            window.location.href = searchUrl + '?query=' + searchContent;
+        }
+    });
+
+    $('.search-box').on("keydown", function (e) {
+        if (e.keyCode == 13) {
+            $('#search').click();
+            return false;//阻止表单提交导致的页面刷新
+        }
+    });
+    //门店搜索
+    $('#storesearch').on("click", function () {
+        var searchContent = $(".store-box").val();
+        if (searchContent) {
+            window.location.href = baseUrl + 'storesearch?query=' + searchContent;
+        }
+    });
+
+    $('.store-box').on("keydown", function (e) {
+        if (e.keyCode == 13) {
+            $('#storesearch').click();
+            return false;//阻止表单提交导致的页面刷新
+        }
+    });
+    //门店搜索end
+
+    //右侧返回顶部
+    var codeIsClose = true;
+    $('censhfix .back-top').on('click', function () {
+        $("html,body").animate({
+            scrollTop: 0
+        });
+    });
+    $(document).on('scroll', function () {
+        var cHeight = $(window).height(),
+            sTop = $(document).scrollTop();
+        if (sTop > cHeight) {
+            $('censhfix .back-top').fadeIn(500);
+            if (codeIsClose) {
+                $('censhfix .item.code').addClass('hover');
+            }
+        } else {
+            $('censhfix .back-top').fadeOut(500);
+            if (codeIsClose) {
+                $('censhfix .item.code').removeClass('hover');
+            }
+        }
+    });
+    //侧边栏二维码
+    var sideItemCode = $('.utils-side>.item.code');
+    /* if(!window.sessionStorage.getItem('code')){
+         sideItemCode.classList.add('hover');
+     }*/
+    sideItemCode.on('click', function () {
+        if (sideItemCode.hasClass('hover')) {
+            sideItemCode.removeClass('hover');
+            codeIsClose = false
+            //window.sessionStorage.setItem('code', '1');
+        } else {
+            sideItemCode.addClass('hover');
+            codeIsClose = true
+        }
+    });
+
+    /*购物车数量*/
+    $.ajax({
+        url: baseUrl + 'checkout/getCartCount',
+        dataType: 'JSONP',
+        async: false,
+        success: function (data) {
+            $(".cart-num").html(data.count);
+
+        }
+    });
+
+    //右边栏数据获取
+    $.ajax({
+        url: '/index/getAccountNums',
+        success: function (res) {
+            var shopNum = $('.utils-side>.shop>.num');
+            var conponNum = $('.utils-side>.conpon>.num');
+            var collectionNum = $('.utils-side>.collection>.num');
+
+            if (res.cart > 0) {
+                shopNum[0].style.display = 'flex';
+                shopNum.html(res.cart);
+            }
+            if (res.coupon > 0) {
+                conponNum[0].style.display = 'flex';
+                conponNum.html(res.coupon);
+            }
+            if (res.wishlist > 0) {
+                collectionNum[0].style.display = 'flex';
+                collectionNum.html(res.wishlist);
+            }
+        }
+    });
+
+    //奥莱顶部
+    $('header .top-banner .close').on('click', function () {
+        $(".top-banner").slideUp(300);
+    });
+
+    //客服咨询窗
+    $(".service-window .dialog .close, .service-window .dialogBg").click(function () {
+        $(".service-window").find("#dialogBg").fadeOut(300);
+        $(".service-window").find("#dialog").removeClass("animated").addClass("bounceOut").fadeOut();
+    });
+
+    //keyword
+    var keywordSwiper = new Swiper('.swiper-container.keyword', {
+        direction: 'vertical',
+        autoplay: {
+            delay: 3000
+        },
+        loop: true,
+        on: {
+            init: function(){
+                this.detachEvents();
+            }
+        }
+    });
+
+    var friendSwiper = new Swiper('.swiper-container.friends', {
+        autoplay: { delay: 5000 },
+        loop: false,
+        slidesPerView:8,
+        slidesPerGroup: 8,
+        spaceBetween: 10,
+        on: {
+            init: function(){
+                this.detachEvents();
+                if(this.slides.length < 9){
+                    this.autoplay.stop();
+                }
+                //this.autoplay.stop();
+            }
+        }
+    });
+});

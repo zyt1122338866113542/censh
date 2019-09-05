@@ -1,0 +1,315 @@
+<template>
+  <header>
+    <div class="nav">
+        <div class="wrap">
+            <div class="u1">
+                <ul>	
+                <li>欢迎光临盛时网</li>
+                <li><a href="login.html" class="login">登录</a></li>
+                <li><a href="login.html" class="reg">免费注册</a></li>
+            </ul>
+            </div>
+            <div class="u2">
+                <ul>
+                    <li>400-921-3599</li>
+                <li><a href="#">盛世APP</a></li>
+                <li><a href="#">我的盛世</a></li>
+            <li><a href="#" class="myolder">我的订单</a></li>
+            </ul>
+            </div>
+        </div>	
+    </div>
+    <div class="core">
+        <div class="wrap">
+            <div class="logo">
+                <div class="logo-wrap">
+                    <a href="#">
+                        <img src="../assets/image/index/logo.png" alt="">
+                    </a>
+                </div>
+                <div class="store">
+                    <a href="#">全国<br>396家门店</a>
+                </div>
+            </div>
+            <div class="search">
+                <div class="select ">
+                    <div class="name dropdown-toggle">产品</div>
+                    <ul class="dropdown">
+                        <li>产品</li>
+                        <li>门店</li>
+                    </ul>
+                </div>
+                <form class="product">
+                    <input type="text" placeholder="请输入商品搜索词" class="search-box autocomplay-input">
+                    <span class="help-hidden-accessible">
+                    </span>
+                    <button type="button" id="search"></button>
+                    <div class="swiper-container"></div>
+                </form>	
+                <a href="#" class="cart" onclick="point_click('购物车')">
+                    <i class="ccart-num">0</i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="menu">
+        <div class="wrap">
+            <div class="item">
+                <a href="#" class="hasChild">全部品牌</a>
+                <div class="sub">
+                    <div class="tab on">
+                        <div class="list col4">
+                            <dl>
+                                <dt>殿堂品牌</dt>
+                                <dd>
+                                    <!-- 事件 -->
+                                    <a href="">朗格</a>
+                                </dd>
+                                <dd>
+                                    <!-- 事件 -->
+                                    <a href="">朗格</a>
+                                </dd>
+                                <dd>
+                                    <!-- 事件 -->
+                                    <a href="">朗格</a>
+                                </dd>
+                                <dd>
+                                    <!-- 事件 -->
+                                    <a href="">朗格</a>
+                                </dd>
+                                <dd>
+                                    <!-- 事件 -->
+                                    <a href="">朗格</a>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="list col4">
+                            <dl>
+                                <dt>殿堂品牌</dt>
+                                <dd>
+                                    <!-- 事件 -->
+                                    <a href="">朗格</a>
+                                </dd>
+                                <dd>
+                                    <!-- 事件 -->
+                                    <a href="">朗格</a>
+                                </dd>
+                                <dd>
+                                    <!-- 事件 -->
+                                    <a href="">朗格</a>
+                                </dd>
+                                <dd>
+                                    <!-- 事件 -->
+                                    <a href="">朗格</a>
+                                </dd>
+                                <dd>
+                                    <!-- 事件 -->
+                                    <a href="">朗格</a>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="list col4">
+                            <dl>
+                                <dt>殿堂品牌</dt>
+                                <dd>
+                                    <!-- 事件 -->
+                                    <a href="">朗格</a>
+                                </dd>
+                                <dd>
+                                    <!-- 事件 -->
+                                    <a href="">朗格</a>
+                                </dd>
+                                <dd>
+                                    <!-- 事件 -->
+                                    <a href="">朗格</a>
+                                </dd>
+                                <dd>
+                                    <!-- 事件 -->
+                                    <a href="">朗格</a>
+                                </dd>
+                                <dd>
+                                    <!-- 事件 -->
+                                    <a href="">朗格</a>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="list col4">
+                            <dl>
+                                <dt>殿堂品牌</dt>
+                                <dd>
+                                    <!-- 事件 -->
+                                    <a href="">朗格</a>
+                                </dd>
+                                <dd>
+                                    <!-- 事件 -->
+                                    <a href="">朗格</a>
+                                </dd>
+                                <dd>
+                                    <!-- 事件 -->
+                                    <a href="">朗格</a>
+                                </dd>
+                                <dd>
+                                    <!-- 事件 -->
+                                    <a href="">朗格</a>
+                                </dd>
+                                <dd>
+                                    <!-- 事件 -->
+                                    <a href="">朗格</a>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                  <a href="#" class="hasChild">选表购表</a>
+                  <div class="sub">
+                      <div class="tab on">
+                          <div class="list">
+                              <dl>
+                                    <dt>
+                                        <div class="item on">全部手表</div>
+                                        <!-- 事件 -->
+                                        <div class="item" onclick="">精选系列</div>
+                                    </dt>
+                                      <dt>热门品牌</dt>
+                                    <dd>
+                                        <a href="" class="hover">欧米茄</a>
+                                    </dd>
+                                    <dd>
+                                        <a href="" class="hover">欧米茄</a>
+                                    </dd> 
+                                    <dd>
+                                        <a href="" class="hover">欧米茄</a>
+                                    </dd>	
+                                    <dd>
+                                        <a href="" class="hover">欧米茄</a>
+                                    </dd>
+                                    <dd>
+                                        <a href="" class="hover">欧米茄</a>
+                                    </dd> 
+                                    <dd>
+                                        <a href="" class="hover">欧米茄</a>
+                                    </dd>	
+                              </dl>
+                          </div>
+                          <div class="banner">
+                                <div class="item">
+                                    <a href="">
+                                        <img src="../assets/image/index/5c93568c8496e.jpg" alt="">
+                                    </a>
+                                    <div class="name">浪琴红12联名款纪念套装</div>
+                                </div>
+                                <div class="item">
+                                    <a href="">
+                                        <img src="../assets/image/index/5c93568c8496e.jpg" alt="">
+                                    </a>
+                                    <div class="name">复古怀旧</div>
+                                </div>
+                                <div class="item">
+                                    <a href="">
+                                        <img src="../assets/image/index/5c93568c8496e.jpg" alt="">
+                                    </a>
+                                    <div class="name">DIFFERENT-ME</div>
+                                </div>
+                          </div>
+                      </div>
+                      <div class="tab">
+                          <div class="list">
+                                <dl class="large">
+                                    <dt>
+                                        <div class="btns">
+                                            <div class="item">全部手表</div>
+                                            <div class="item on">精选系列</div>
+                                        </div>
+                                    </dt>
+                                    <dt>奢华品牌</dt>
+                                    <dd>
+                                        <a href="">宝珀</a>
+                                    </dd>
+                                    <dd>
+                                        <a href="">宝珀</a>
+                                    </dd>
+                                    <dd>
+                                        <a href="">宝珀</a>
+                                    </dd>
+                                    <dd>
+                                        <a href="">宝珀</a>
+                                    </dd>
+                                    <dd>
+                                        <a href="">宝珀</a>
+                                    </dd>
+                                </dl>
+                          </div>
+                          <div class="list">
+                              <dl class="large">
+                                  <dt>
+                                      <div class="btns"></div>
+                                  </dt>
+                                  <dd><a href="">汉米尔顿</a></dd>
+                              </dl>
+                          </div>
+                      </div>
+                  </div>
+            </div>
+            <div class="item">
+                <a href="#" class="hasChild">盛时奥莱</a>
+            </div>
+            <div class="item">
+                  <a href="#" class="hasChild">积分商城</a>
+            </div>
+            <div class="item">
+                <a href="#" class="hasChild">定制&周边</a>
+            </div>
+            <div class="item">
+                  <a href="#" class="hasChild">海外产品</a>
+            </div>
+            <div class="item">
+                <a href="#" class="hasChild">维修保养</a>
+            </div>
+            <div class="item">
+                  <a href="#" class="hasChild">线下门店</a>
+            </div>
+            <div class="item">
+                  <a href="#" class="hasChild">品牌馆</a>
+            </div>
+            <div class="item">
+                <a href="#" class="hasChild">资讯</a>
+            </div>
+            <div class="item">
+                  <a href="#" class="hasChild">视频</a>
+            </div>
+        </div>
+    </div>
+</header>
+</template>
+<script>
+export default {
+//   data(){
+//     return {
+//       kw:""//利用双向绑定获得搜索文本框中用户输入的关键词
+//     }
+//   },
+//   methods:{
+//     //点击查询按钮或在文本框上按回车，都可以跳转到/products页面，并把输入的关键词传过去。
+//     search(){
+//       this.$router.push("/products/"+this.kw)
+//     }
+//   },
+//   //如果地址栏中已经有用户输入的关键词参数kw，则自动获取到搜索文本框中保持同步
+//   created(){
+//     this.kw=this.$route.params.kw;
+//   },
+//   watch:{
+//     //如果地址栏中已经有用户输入的关键词参数kw，则自动获取到搜索文本框中保持同步
+//     $route(){
+//       this.kw=this.$route.params.kw;
+//     }
+//   }
+ }
+</script>
+<style scoped>
+    @import url(../assets/css/MyHeader.css);
+    @import url(../assets/css/common.css);
+    @import url(../../public/css/normalize.css);
+</style>
