@@ -1,0 +1,500 @@
+section{
+    margin-bottom: 30px;
+    color: #212121;
+}
+.col-main{
+    width:1200px;
+    margin: 0 auto;
+    box-sizing:border-box;
+}
+section .title{
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 16px;
+}
+.section-step-delivery .delivery-type{
+    overflow: hidden;
+ 
+}
+.section-step-delivery .delivery-type li.checked{
+    background-position: 0 -1px;
+}
+.section-step-delivery .delivery-type li{
+    float: left;
+    margin-right: 26px;
+    padding-left: 22px;
+    background: url(../../image/images/arrdown.png) 0 -36px no-repeat;
+    color: #3e3e3e;
+    text-align: left;
+    line-height: 16px;
+    cursor: pointer;
+}
+.section .checkout-step-container{
+    position: relative;
+    padding: 25px 30px;
+    border: 1px solid #ededed;
+}
+.section-step-delivery .delivery{
+    border: 1px dotted #bfbfbf;
+    margin-top: 18px;
+}
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}
+.section-step-delivery .checked-step-billing .add-address{
+    display: inline-block;
+    overflow: hidden;
+    cursor: pointer;
+}
+.section-step-delivery .checked-step-billing .add-address .add-icon{
+    float: left;
+    margin: 1px 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    background: #e51f1d;
+    color: #fff;
+    text-align: center;
+    line-height: 14px;
+}
+.section-step-delivery .checked-step-billing .add-address .add-icon i{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+.section-step-delivery .checked-step-billing .add-address .txt{
+    float: left;
+    padding-left: 5px;
+}
+.section-step-delivery .checked-step-billing .billing-message{
+    position: absolute;
+    bottom: 0;
+    left: 30px;
+    display: none;
+    color: #e51f1d;
+    line-height: 30px;
+}
+#billing-new-address-form .form_address .form-list li{
+    margin: 0 0 30px;
+}
+#billing-new-address-form .form_address .form-list label{
+    float: left;
+    margin-right: 10px;
+    width: 68px;
+    color: #212121;
+    text-align: right;
+    line-height: 30px;
+}
+#billing-new-address-form .form_address .form-list label em{
+    margin-right: 2px;
+    color: #e51f1d;
+    font-style: normal;
+}
+#billing-new-address-form .form_address .form-list .input-box{
+    position: relative;
+}
+#billing-new-address-form .form_address .form-list .input-box input{
+    float: left;
+    padding: 5px 10px;
+    width: 200px;
+    height: 20px;
+    border: 1px solid #bfbfbf;
+    border-radius: 4px;
+    background: #fff;
+    line-height: 20px;
+}
+#billing-new-address-form .form_address .form-list .offdeck{
+    float: left;
+    margin-left: 10px;
+    height: 30px;
+    color: #e51f1d;
+    line-height: 30px;
+    /* display: none; */
+}
+#billing-new-address-form .form_address .form-list li.wide .selectList{
+    float: none;
+    width: auto;
+}
+#billing-new-address-form .form_address .form-list .location_select{
+    position: relative;
+    float: left;
+    margin-right: 2%;
+}
+#billing-new-address-form .form_address .form-list .location_select select{
+    box-sizing: border-box;
+    padding: 0 32px 0 12px;
+    width: auto;
+    height: 30px;
+    border-radius: 4px;
+    background: url(../../image/images/arrdown.png) 90% no-repeat;
+    color: #333;
+}
+#billing-new-address-form .form_address .form-list .wide .offdeck{
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    margin: 0;
+}
+#billing-new-address-form .form_address .form-list li.wide .input-box{
+    float: left;
+    width: 72%;
+}
+#billing-new-address-form .form_address .form-list li.wide textarea{
+    box-sizing: border-box;
+    padding: 5px 10px;
+    width: 100%;
+    height: 70px;
+    border-radius: 4px;
+    background: #fff;
+}
+#billing-new-address-form .form_address .form-list .offdeck02{
+    padding-left: 20px;
+    background: url(../../image/images/arrdown.png) left center/15px no-repeat;
+}
+#billing-new-address-form .form_address .btnBox button{
+    display: inline-block;
+    width: 75px;
+    height: 30px;
+    background: #c1c1c1;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    line-height: 30px;
+    cursor: pointer;
+}
+.section-step-reserveBilling .reserveBilling-box{
+    border: 1px dotted #d6d6d6;
+}
+.section-step-reserveBilling .reserveBilling-box .form-list li{
+    position: relative;
+}
+.section-step-custInfo .Validform_label{
+    width: 68px;
+    height: 30px;
+    line-height: 30px;
+}
+.section-step-custInfo .edit-model{
+    display: block;
+}
+.section-step-custInfo input.input-text{
+    margin-bottom: 15px;
+    width: 200px;
+    height: 28px;
+    border: 1px solid #bfbfbf;
+    border-radius: 5px;
+    background: #fff;
+    text-indent: 10px;
+    line-height: 28px;
+}
+.section-step-custInfo .reserveBilling-box .offdeck{
+    float: left;
+    margin-left: 5px;
+    height: 30px;
+    color: #e51f1d;
+    line-height: 30px;
+}
+.section-step-custInfo .show-model{
+    height: 30px;
+    line-height: 30px;
+    cursor: default;
+}
+.section-step-reserveBilling .reserveBilling-box .edit-contact{
+    position: absolute;
+    top: 50%;
+    left: 388px;
+    z-index: 1;
+    color: #0aa2e4;
+    font-size: 14px;
+    cursor: pointer;
+}
+.section-step-custInfo .confirm_btn{
+    margin-left: 70px;
+    width: 68px;
+    height: 28px;
+    background: #e51f1d;
+    color: #fff;
+    text-align: center;
+    line-height: 28px;
+    cursor: pointer;
+}
+.fapiao-message, .reserveBilling-message{
+    display: none;
+    color: #e51f1d;
+}
+input[type=radio]:checked{
+    background-position: 1px -1px;
+}
+input[type=radio]{
+    margin-right: 10px;
+    width: 20px;
+    height: 17px;
+    background: url(../../image/images/arrdown.png) 1px -35px no-repeat;
+    cursor: pointer;
+}
+.section-step-payment label{
+    cursor: pointer;
+}
+.checkout-step-invoice .fapiao-content .fapiao-title{  
+    margin-top: 20px;
+}
+
+.checkout-step-invoice .fapiao-content .added_value_tax{  
+    margin-bottom: 20px; 
+}
+.checkout-step-invoice .fapiao-content .added_value_tax ul{
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.checkout-step-invoice .fapiao-content .added_value_tax .information{
+    position: relative;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+.checkout-step-invoice .fapiao-content .added_value_tax label{
+    width: 96px;
+}
+.checkout-step-invoice .fapiao-content .fapiao-title li{
+    margin-bottom: 15px;
+}
+.checkout-step-invoice .fapiao-content .fapiao-title select{
+    padding: 0 32px 0 12px;
+    width: 140px;
+    height: 30px;
+    border: 1px solid #b6b6b6;
+    border-radius: 4px;
+    color: #333;
+}
+.checkout-step-invoice .fapiao-content label{
+    float: left;
+    margin-right: 10px;
+    color: #212121;
+    text-align: right;
+    line-height: 30px;
+    cursor: pointer;
+}
+.checkout-step-invoice .fapiao-content .added_value_tax em{
+    margin-right: 2px;
+    color: #e51f1d;
+}
+.checkout-step-invoice .fapiao-content .added_value_tax input.input-text{
+    width: 300px;
+    height: 28px;
+    border: 1px solid #bfbfbf;
+    border-radius: 5px;
+    background: #fff;
+    text-indent: 10px;
+    line-height: 28px;
+}
+.checkout-step-invoice .fapiao-content .added_value_tax .offdeck01{
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    height: 20px;
+    color: #e51f1d;
+    line-height: 20px;
+}
+.checkout-step-invoice .fapiao-content .err-tips{
+    height: 30px;
+    color: #e51f1d;
+    font-size: 14px;
+    line-height: 30px;
+}
+.checkout-step-invoice .fapiao-content .added_value_tax .vat-note{
+    color: #0384e2;
+}
+.checkout-step-invoice .fapiao-content button{
+    margin-left: 70px;
+    width: 140px;
+    height: 36px;
+    background: #e51f1d;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    line-height: 36px;
+    cursor: pointer;
+}
+.checkout-step-review .section-content{
+    border: 1px solid #ededed;
+    border-bottom: 0;
+}
+.checkout-step-review .section-content .section-header{
+    padding: 25px 40px 18px;
+    border-bottom:1px solid #ededed;
+    background: #f5f5f5;
+    font-size: 14px;
+}
+.checkout-step-review .section-content .section-header li.field-product{
+    text-indent: 13%;
+}
+.checkout-step-review .section-content .section-header li{
+    float: left;
+    text-align: center;
+}
+.checkout-step-review .section-content li.field-product{
+    width: 40%;
+    text-align: left;
+}
+.checkout-step-review .section-content li.field-price{
+    width: 25%;
+}
+.checkout-step-review .section-content li.field-qty{
+    width: 20%;
+}
+.checkout-step-review .section-content  li.field-sum{
+    width: 10%;
+}
+.checkout-step-review .section-content .section{
+    padding: 22px 40px;
+    border-bottom: 1px solid #ededed;
+}
+.checkout-step-review .section-content .section li{
+    height: 82px;
+    line-height: 82px;
+}
+.checkout-step-review .section-content li{
+    float: left;
+}
+.checkout-step-review .section-content li.field-product .product-img{
+    width: 80px;
+    height: 80px;
+    border: 1px solid #d6d6d6;
+}
+.checkout-step-review .section-content li.field-product .product-img img{
+    display: block;
+    width: 100%;
+}
+.checkout-step-review .section-content li.field-product .col-right{
+    padding: 19px 0 0 10px;
+    width: 263px;
+}
+.checkout-step-review .section-content li.field-product .product-name{
+    display: block;
+    overflow: hidden;
+    color: #212121;
+    text-align: left;
+    white-space: nowrap;
+    line-height: 22px;
+}
+.checkout-step-review .section-content li.field-product .sku{
+    color: #212121;
+    text-align: left;
+    font-size: 14px;
+    line-height: 22px;
+}
+.checkout-step-review .section-content li.field-price .price{
+    color: #212121;
+    text-align: center;
+}
+.checkout-step-review .section-content li.field-price .price span{
+    display: block;
+    line-height: 22px;
+}
+.checkout-step-review .section-content li.field-price .final-price{
+    padding: 19px 0 0;
+    color: #e51f1d;
+}
+.checkout-step-review .section-content li.field-qty{
+   text-align: center;
+}
+.checkout-step-review .section-content li.field-sum .price{
+    color: #e51f1d;
+    text-align: center;
+}
+.checkout-step-review .section-content li.field-sum .price .price{
+    display: block;
+    line-height: 22px;
+}
+.checkout-step-review .bottom{
+    background: #f5f5f5;
+}
+.checkout-step-review .remark{
+    float: left;
+    margin: 0 0 30px 30px;
+    width: 35%;
+}
+.checkout-step-review .remark textarea{
+    padding: 8px;
+    width: 100%;
+    height: 60px;
+    border: 1px solid #d6d6d6;
+}
+.checkout-step-review .checkout-payamout{
+    margin-top: 30px;
+    padding: 0 30px;
+    background: #f5f5f5;
+}
+.checkout-step-review .checkout-totals{
+    padding: 30px 0 20px;
+    text-align: right;
+    font-size: 14px;
+    line-height: 30px;
+}
+.checkout-step-review .checkout-totals .price{
+    color: #e51f1d;
+    font-size: 18px;
+}
+.shopping-reading{
+    text-align: right;
+}
+.shopping-reading span{
+    font-size: 14px;
+    cursor: pointer;
+}
+.shopping-reading span span{
+    float: right;
+}
+.shopping-reading span img{
+    float: right;
+    width: 20px;
+}
+.checkout-step-review .logistic_fee{
+    color: #c1c1c1;
+    text-align: right;
+}
+#checkout-step-submit{
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+.checkout-step-submit .cartLink{
+    display: inline-block;
+    padding: 20px 50px 0 0;
+    color: #0384e2;
+    text-align: left;
+    line-height: 17px;
+}
+.checkout-step-submit .submitBtn{
+    padding: 12px 37px;
+    background: #e51f1d;
+    color: #fff;
+    vertical-align: top;
+    font-size: 14px;
+    cursor: pointer;
+}
+.checkout-step-submit .purchase_terms{
+    position: relative;
+    margin: 10px 0;
+}
+.checkout-step-submit .purchase_terms .agree{
+    display: inline-block;
+    padding-left: 5px;
+    height: 17px;
+}
+.checked-step-submit .purchase_terms .agree .link{
+    margin-right: 10px;
+    color: #0384e2;
+    cursor: pointer;
+}
+.agreement-tips{
+    position: absolute;
+    top: 0;
+    right: 260px;
+    display: none;
+    color: #e51f1d;
+    font-size: 12px;
+}

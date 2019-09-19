@@ -15,13 +15,18 @@ main section.breadcrumbs ul li a{
 }
 main section.summary .summary-image{
     width: 576px;
+    height: 1000px;
+    position: relative;
 }
 main section.summary .summary-image .thumbanil{
     width: 70px;
+    
 }
 main section.summary .summary-image .thumbanil ul{
     display: block;
     width: 100%;
+    display: flex;  
+    flex-flow: column;  
 }
 main section.summary .summary-image .thumbanil ul li{
     box-sizing: border-box;
@@ -29,8 +34,8 @@ main section.summary .summary-image .thumbanil ul li{
     height: 70px;
     cursor: pointer;
     padding: 10%;
+    margin: 10%;
     overflow: hidden;
-    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -42,7 +47,6 @@ main section.summary .summary-image .thumbanil ul li img{
 }
 main section.summary .summary-image .picture{
     width: 490px;
-    position: relative;
 }
 main section.summary .summary-image .picture ul{
     cursor: pointer;
@@ -57,6 +61,31 @@ main section.summary .summary-image .picture ul li img{
     width: 490px;
     height: 490px;
     margin: auto;
+}
+ 
+#mask{
+    position: absolute;
+    width:170px; height:170px;
+    background-color:rgb(255, 255, 170);
+    opacity:.5;
+}
+#super-mask{
+    position: absolute;
+    top:0;left: 0;
+    width:490px; height:490px;
+    border: 1px solid red;
+}
+#div-lg{
+    position: absolute;
+    width:700px; height:700px;
+    z-index:1000;
+    border: 1px solid rgba(0, 0, 0, 0.125)
+} 
+#div-lg ul li{
+    display: none;
+}
+#div-lg ul li.current{
+    display: block;
 }
 main section.summary .summary-image p.tip{
     display: inline-block;

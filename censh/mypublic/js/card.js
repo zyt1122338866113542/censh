@@ -1,46 +1,8 @@
+
 $(function(){
-    //加
-    // $(".qty-plus").click(function(){
-    //     var $input=$(this).prev();
-    //     console.log($input)
-    //     var html=$input.val();
-    //     console.log(html)
-    //     var n=parseInt(html.slice(0));
-    //     n++;
-    //     $input.val(n);
-    //     var total=n*1499;
-    //     $("#price").html(total);
-    //     $(".num").html(n);
-    //     $("#total").html(total);
-    // })
-   //减
-    // $(".qty-minus").click(function(){
-    //     var $input=$(this).next();
-    //     var html=$input.val();
-    //     var n=parseInt(html.slice(0));
-    //     if(n>0){
-    //     n--;  
-    //     }
-    //     $input.val(n);
-    //     var total=n*1499;
-    //     $("#price").html(total);
-    //     $(".num").html(n);
-    //     $("#total").html(total);   
-    // })
-    // //复选框
-    // $("#mycheckbox").click(function(){
-    //     $("#pay").toggleClass("active");
-    // })
-    // //删除按钮
-    // $("#del").click(function(){
-    //     $("#product").addClass("fale");
-    //     $(".cart-footer").addClass("fale");
-    // })
-
-
+ var $content = $(".content");
     $(".content").click(function(e){
-       // console.log($span)
-       //console.log(2222222222)
+        
         if(e.target.className=="ff"){
             var $span = $(e.target);
             var $input = $span.parent().children("input")
@@ -49,21 +11,54 @@ $(function(){
             if($span.html()=="+"){
                 n+=1;
             }
-            else if(n>1){
+            else if(n>=0){
                 n--;
             }
             $input.val(n);
             //修改小计
-            var $sum = $span.parent().parent().next().children("span").children("span");
+            var $sum =$span.parent().parent().next().children("span").children("span");
             var $price = parseFloat(
-                $span.parent().parent().prev().children(1).html()
+                $span.parent().parent().prev().children().children(".final-price").html()
             ) 
-            console.log($price)
-            // var sum = $price*n;
-            //  $sum.html(sum);
-            // console.log($sum)
+            $sum.html($price*n);
+
+            // 修改商品个数
+            var num=0;
+            var $numAll = $content.parent().next().find(".checked-count");
+            $content.find(".qty-box>input").each(function(i,domElem){
+                var $elem=$(domElem);
+                num+=parseInt($elem.val());
+            })
+            $numAll.html(num);
+
+            // 修改总价
+            // 获取每个商品的小计
+            var total=0;
+            var $tatalAll = $("#totalAll");
+            $content.find(".price1").each(function(i,domElem){
+                var $elem=$(domElem);
+                total+=parseFloat($elem.html());
+            })
+            $tatalAll.html(total);
+            console.log(total)
+
+            // 立即结算变颜色
+            if(num>0){
+                $("#pay").addClass("active");
+            }else{
+                $("#pay").removeClass("active");
+            }
+            // 删除
+            $content.find("button").click(function(){
+                $(this).parent().parent().remove();
+                $numAll.html(num-n);
+                $tatalAll.html(total-$price*n);
+            })
         }
     })
- 
+    $("input:checkbox").click(function(){
+       if($(this).attr("checked")){
+           console.log(44444444444)
+       }
+    })
 })
-7

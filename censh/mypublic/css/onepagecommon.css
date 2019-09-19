@@ -1,0 +1,57 @@
+
+.fale{
+    visibility: hidden;
+ }
+ .col-main{
+     position: relative;
+     width:1200px;
+     margin: 0 auto;
+     box-sizing:border-box;
+ }
+ section.breadcrumbs{
+     padding: 20px 0;
+ }
+ section.breadcrumbs ul li{
+     float: left;
+ }
+ section .checkout-steps{
+     margin-bottom: 40px;
+ }
+ section .checkout-steps li.step{
+     float: left;
+     width:25%;
+     padding: 20px 0 0;
+     position: relative;
+     text-align: center;
+ }
+ section .checkout-steps li.step.active .step-number{
+  border-top: 5px solid #e51f1d;
+ }
+ section .checkout-steps li.step .step-number{
+     position: relative;
+     color: #fff;
+     border-top: 5px solid #c4c4c4;
+ }
+ section .checkout-steps li.step.active .step-number span{
+     background: #e51f1d;
+ }
+ section .checkout-steps li.step .step-number span{
+     position: absolute;
+     left: 50%;
+     top: -17px;
+     margin-left: -14px;
+     display: block;
+     width: 28px;
+     height: 28px;
+     line-height: 28px;
+     border-radius: 14px;
+     background: #c4c4c4;
+ }
+ section .checkout-steps li.step.active .label{
+     color: #e51f1d;
+ }
+ section .checkout-steps li.step .label{
+     margin-top: 25px;
+     font-size: 15px;
+     font-weight: bold;
+ }
